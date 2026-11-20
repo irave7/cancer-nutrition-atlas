@@ -1,0 +1,339 @@
+{
+  "cases": [
+    {
+      "id": "fj-putian-surgical-nutrition",
+      "province": "福建",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "莆田",
+      "institution": "莆田学院附属医院",
+      "title": "莆田胃肠外科把筛评与阶梯干预纳入病房流程",
+      "date": "2026-04-15",
+      "url": "https://wjw.fujian.gov.cn/xxgk/gzdt/bmdt/202604/t20260415_7124883.htm",
+      "sourceType": "卫生健康委官网公开报道",
+      "sourceTitle": "莆田学院附属医院获评规范化外科营养诊疗示范病房",
+      "summary": "胃肠外科把营养风险筛查、营养评估、干预与监测嵌入加速康复外科，公开了入院时限与分层支持做法。",
+      "scope": "该院胃肠外科围手术期营养诊疗流程，公开材料重点讨论胃肠肿瘤患者。",
+      "category": "surgery",
+      "cancers": [
+        "胃肠道肿瘤"
+      ],
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "monitoring"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "院方公开做法将营养风险识别安排在入院早期。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "报告的院内流程要求入院 24 小时内完成筛查与专业评估。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "团队按临床风险和耐受情况作个体化营养支持，并采用阶梯式治疗思路。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "病房将监测、反馈和支持方案调整纳入围手术工作。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "公开流程时点",
+          "value": "入院 24 小时内",
+          "context": "省卫健委刊载的病房流程描述。来源未披露该时限的实际完成率。"
+        }
+      ],
+      "evidence": "示范病房获评和院内流程有公开记录。实际覆盖率、临床结局及离院后的营养随访未在该报道中披露。",
+      "evidenceType": "program",
+      "links": [
+        {
+          "docId": "clinical-department-2022",
+          "clauseId": "screen24",
+          "reason": "入院早期营养风险筛查可对照工作规范。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "风险筛评、干预和反馈构成院内营养路径。"
+        },
+        {
+          "docId": "fj-health-15th",
+          "clauseId": "integrated",
+          "reason": "把围手术期营养支持纳入整合诊疗可对照福建规划方向。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "fj-fz-changle-palliative",
+      "province": "福建",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "福州长乐",
+      "institution": "长乐区江田镇中心卫生院",
+      "title": "福州长乐家庭医生团队为晚期贲门癌患者接续居家照护",
+      "date": "2026-11-09",
+      "url": "https://www.fuzhou.gov.cn/zgfzzt/swjw/fzwj/gzdt/202611/t20261109_5391144.htm",
+      "sourceType": "卫生健康委官网公开报道",
+      "sourceTitle": "福州推动安宁疗护服务从“有”向“优”发展",
+      "summary": "市卫健委公开一例晚期贲门癌患者居家照护。家庭医生在患者返家后评估，基层护理团队轮班上门，提供营养支持及家属照护指导。",
+      "scope": "一例全身转移贲门癌患者。已记录的居家服务限于该患者和该团队。",
+      "category": "palliative",
+      "cancers": [
+        "胃癌"
+      ],
+      "steps": [
+        "assessment",
+        "intervention",
+        "followup",
+        "palliative"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "患者返家后进食困难，家庭医生到家评估照护需要。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "护士结合该个案的计划提供上门营养支持，并指导家属照护。"
+        },
+        {
+          "stage": "followup",
+          "detail": "基层护理团队轮班提供持续约一个月的上门服务。"
+        },
+        {
+          "stage": "palliative",
+          "detail": "团队同时指导镇痛和舒适照护，服务安排依据个案情况。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "个案上门支持时长",
+          "value": "约 1 个月",
+          "context": "市卫健委报道，口径为单病例，未披露辖区覆盖率。"
+        }
+      ],
+      "evidence": "病例材料验证了评估、实际入户支持和家属教育的衔接。未公布临床比较或营养专项覆盖率，其他患者的干预需个体决策。",
+      "evidenceType": "case",
+      "links": [
+        {
+          "docId": "palliative-2025",
+          "clauseId": "feeding",
+          "reason": "可对照安宁照护中对进食及饮水需求进行专业评估和支持。"
+        },
+        {
+          "docId": "fj-home-beds",
+          "clauseId": "eligibility",
+          "reason": "核对家庭病床政策的晚期肿瘤适用条件，公开报道未交代该个案结算方式。"
+        },
+        {
+          "docId": "fj-family-doctor-2022",
+          "clauseId": "integration",
+          "reason": "基层照护组织有助于对照家庭医生签约服务与医联体协同。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "福建省卫健委 福州安宁疗护服务扩展",
+          "url": "https://wjw.fujian.gov.cn/xxgk/gzdt/bmdt/202609/t20260907_7209699.htm"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "fj-health-15th",
+      "title": "福建省“十五五”卫生健康发展规划",
+      "number": "闽政〔2026〕21号",
+      "issuer": "福建省人民政府",
+      "date": "2026-08-19",
+      "region": "福建",
+      "type": "省级发展规划",
+      "status": "规划期 2026—2030 年",
+      "summary": "提出支持营养专科、整合型医疗服务及县域肿瘤防治能力，适用于省内卫生健康服务体系建设。",
+      "url": "https://www.fj.gov.cn/zwgk/zxwj/szfwj/202608/t20260827_7204966.htm",
+      "fullTextUrl": "https://www.fj.gov.cn/zwgk/zxwj/szfwj/202608/t20260827_7204966.htm",
+      "previewUrl": "https://www.fj.gov.cn/zwgk/zxwj/szfwj/202608/t20260827_7204966.htm",
+      "notes": "",
+      "attachments": [],
+      "clauses": [
+        {
+          "id": "specialty",
+          "locator": "（二十）加强临床专科建设",
+          "title": "营养专科能力建设",
+          "summary": "将营养列入扶持建设的专科方向，医院可结合其专科布局补齐能力。",
+          "stages": [
+            "system"
+          ],
+          "find": "营养",
+          "page": null,
+          "url": null
+        },
+        {
+          "id": "integrated",
+          "locator": "（二十三）实施暖心服务行动",
+          "title": "把营养纳入综合诊疗",
+          "summary": "推动营养与疾病诊治、疼痛、心理和康复相衔接，完善整合型医疗服务。",
+          "stages": [
+            "treat",
+            "transition",
+            "system"
+          ],
+          "find": "身心同治的综合诊疗模式",
+          "page": null,
+          "url": null
+        },
+        {
+          "id": "county",
+          "locator": "专栏3 医疗卫生强基工程",
+          "title": "县域肿瘤防治延伸",
+          "summary": "强调县域肿瘤防治中心建设，并把有关服务向乡村延伸。",
+          "stages": [
+            "transition",
+            "system"
+          ],
+          "find": "县域肿瘤防治中心",
+          "page": null,
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "fj-family-doctor-2022",
+      "title": "关于推进家庭医生签约服务高质量发展的实施方案",
+      "number": "闽卫基层〔2022〕91号",
+      "issuer": "福建省卫生健康委员会等四部门",
+      "date": "2022-07",
+      "region": "福建",
+      "type": "省级实施方案",
+      "status": "按发文公开信息",
+      "summary": "明确基层家庭医生与医联体协作、双向转诊和出院后随访，可用于设计营养服务承接任务。",
+      "url": "https://wjw.fujian.gov.cn/xxgk/fgwj/zxwj/202208/t20220801_5964642.htm",
+      "fullTextUrl": "https://wjw.fujian.gov.cn/xxgk/fgwj/zxwj/202208/t20220801_5964642.htm",
+      "previewUrl": "https://wjw.fujian.gov.cn/xxgk/fgwj/zxwj/202208/t20220801_5964642.htm",
+      "notes": "文件适用于签约服务及相应出院随访范围，营养专用字段与执行情况由参加机构核对。",
+      "attachments": [],
+      "clauses": [
+        {
+          "id": "handoff",
+          "locator": "第二部分第（六）项",
+          "title": "出院信息及随访交接",
+          "summary": "有条件的地方可由上级医院通过信息系统推送符合范围的出院信息及随访要求，由签约团队接续，具体流程按地区执行。",
+          "stages": [
+            "transition",
+            "system"
+          ],
+          "find": "出院患者",
+          "page": null,
+          "url": null
+        },
+        {
+          "id": "integration",
+          "locator": "第二部分第（三）项",
+          "title": "利用医联体专家资源",
+          "summary": "支持医联体、医共体牵头医院与基层签约团队协作，开展带教、健康管理和双向转诊。",
+          "stages": [
+            "system"
+          ],
+          "find": "发挥医联体专家优势",
+          "page": null,
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "fj-home-beds",
+      "title": "关于规范家庭病床服务收费有关问题的通知",
+      "number": "闽医保〔2020〕100号",
+      "issuer": "福建省医疗保障局、福建省卫生健康委员会",
+      "date": "2020",
+      "region": "福建",
+      "type": "地方行政规范性文件",
+      "status": "省医保局现行有效文件目录",
+      "summary": "对符合条件的家庭病床服务规定建床、巡诊及医保目录内医疗费用的结算方式。",
+      "url": "https://ybj.fujian.gov.cn/zfxxgkzl/zc/xzgfxwj/xxyxgfxwjdyp/202306/t20230616_6188063.htm",
+      "fullTextUrl": "https://ybj.fujian.gov.cn/zfxxgkzl/zc/xzgfxwj/xxyxgfxwjdyp/202306/t20230616_6188063.htm",
+      "previewUrl": "https://ybj.fujian.gov.cn/zfxxgkzl/zc/xzgfxwj/xxyxgfxwjdyp/202306/t20230616_6188063.htm",
+      "notes": "家庭病床相关项目价格后续有调整，以当地执行口径为准。",
+      "attachments": [
+        {
+          "title": "福建 2022 年家庭病床收费调整",
+          "url": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/zcwj/202208/t20220824_5981221.htm"
+        }
+      ],
+      "clauses": [
+        {
+          "id": "eligibility",
+          "locator": "三（一）",
+          "title": "核对晚期恶性肿瘤患者的家庭病床条件",
+          "summary": "明确将符合文件建床条件的晚期恶性肿瘤等参保患者纳入相应服务规定。",
+          "stages": [
+            "palliative",
+            "transition",
+            "system"
+          ],
+          "find": "晚期恶性肿瘤",
+          "page": null,
+          "url": null
+        },
+        {
+          "id": "settlement",
+          "locator": "三（二）、（四）",
+          "title": "按实际服务项目及目录核对支付",
+          "summary": "建床和巡诊及目录内医疗费用按文件规定审核结算。居家生活照护、目录外项目和产品另按适用规则核对。",
+          "stages": [
+            "palliative",
+            "system"
+          ],
+          "find": "医保目录",
+          "page": null,
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "fj-clinical-scale-2025",
+      "title": "关于规范整合临床量表评估类医疗服务价格项目的通知",
+      "number": "闽医保〔2025〕17号",
+      "issuer": "福建省医疗保障局",
+      "date": "2025-03",
+      "region": "福建",
+      "type": "地方价格与支付文件",
+      "status": "按发文及后续当地执行口径",
+      "summary": "明确临床量表相关价格范围及护理评估计费边界。实际支付资格还需按项目限定范围核对。",
+      "url": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/t20250317_6780019.htm",
+      "fullTextUrl": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/t20250317_6780019.htm",
+      "previewUrl": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/t20250317_6780019.htm",
+      "notes": "项目定价与基本医保支付条件分别适用。",
+      "attachments": [
+        {
+          "title": "附件1 临床量表评估类医疗服务价格项目表",
+          "url": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/P020250317544715507567.pdf"
+        }
+      ],
+      "clauses": [
+        {
+          "id": "care-charge",
+          "locator": "附件1 使用说明第1、9项",
+          "title": "营养风险筛查的护理计价边界",
+          "summary": "量表评估服务可涉及营养状态，但长期随访和科研用途另有范围规定。护理人员实施的营养风险筛查等护理评估已计入分级护理价格，不单独另外计费。",
+          "stages": [
+            "screen",
+            "system"
+          ],
+          "find": "",
+          "page": 1,
+          "url": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/P020250317544715507567.pdf"
+        }
+      ]
+    }
+  ]
+}

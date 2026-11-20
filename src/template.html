@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="癌症营养全周期政策、各省临床实践及国际案例对照">
+<title>癌症营养全周期管理图谱</title>
+<style>
+CSS_BUNDLE
+</style>
+</head>
+<body>
+<a class="skip" href="#workbench">跳到工作区</a>
+<div class="app-window" id="app">
+  <aside class="sidebar" id="sidebar" aria-label="侧边导航">
+    <div class="brand"><div class="brand-icon" aria-hidden="true"><i data-icon="cross"></i></div><div><strong>临床营养图谱</strong><small>政策与实践</small></div></div>
+    <nav id="nav" aria-label="工作区导航"></nav>
+    <div class="sidebar-foot">
+      <div class="foot-date"><i data-icon="check"></i><span>核验至 <time datetime="VERSION_DATE">VERSION_DISPLAY</time></span></div>
+      <button type="button" class="side-command" data-action="search"><i data-icon="search"></i><span>搜索案例与政策</span><kbd>⌘ K</kbd></button>
+    </div>
+  </aside>
+  <main id="workbench" class="workspace">
+    <header class="toolbar" aria-label="图谱工具栏">
+      <div class="tool-leading">
+        <button type="button" class="icon-button" data-action="sidebar" aria-label="显示或隐藏侧边栏" aria-controls="sidebar" aria-expanded="true" title="显示或隐藏侧边栏"><i data-icon="sidebar"></i></button>
+        <div class="history-group">
+          <button type="button" class="icon-button" data-action="back" aria-label="返回上一处" title="返回上一处"><i data-icon="left"></i></button>
+          <button type="button" class="icon-button" data-action="forward" aria-label="前往下一处" title="前往下一处"><i data-icon="right"></i></button>
+        </div>
+        <nav class="mobile-nav" aria-label="紧凑导航">
+          <label class="sr-only" for="compact-nav">切换视图</label>
+          <select id="compact-nav"></select>
+        </nav>
+        <div id="crumb" class="crumb"></div>
+      </div>
+      <div class="tool-trailing">
+        <button type="button" class="toolbar-search" data-action="search" title="搜索案例与政策"><i data-icon="search"></i><span>搜索</span><kbd>⌘ K</kbd></button>
+        <button type="button" class="icon-button presentation-toggle" data-action="present" aria-pressed="false" title="演示模式" aria-label="演示模式"><i data-icon="expand"></i></button>
+      </div>
+    </header>
+    <div id="screen"></div>
+  </main>
+</div>
+<div class="sr-only" role="status" aria-live="polite" id="announcement"></div>
+<dialog id="search-dialog" class="search-dialog" aria-label="搜索案例、政策与条款">
+  <form class="search-head" method="dialog">
+    <i data-icon="search"></i>
+    <label class="sr-only" for="global-query">搜索案例、政策与条款</label>
+    <input id="global-query" placeholder="搜索机构、癌种、政策、文号或条款" autocomplete="off" type="search">
+    <button class="icon-button" title="关闭搜索" aria-label="关闭搜索" value="close"><i data-icon="close"></i></button>
+  </form>
+  <div id="search-results" class="search-results"></div>
+  <div class="search-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> 选择</span><span><kbd>↵</kbd> 打开</span><span><kbd>Esc</kbd> 关闭</span></div>
+</dialog>
+<dialog id="source-dialog" class="source-dialog" aria-labelledby="source-title">
+  <div class="source-toolbar">
+    <div><h2 id="source-title">官方原件</h2><p id="source-note">原件需联网，若无法内嵌，可在新标签打开。</p></div>
+    <div class="source-actions"><a id="source-link" class="button primary" target="_blank" rel="noopener noreferrer">新标签打开</a><button type="button" class="icon-button" data-action="close-source" title="关闭原件" aria-label="关闭原件"><i data-icon="close"></i></button></div>
+  </div>
+  <iframe id="source-frame" title="官方政策原件" referrerpolicy="no-referrer"></iframe>
+</dialog>
+<script type="application/json" id="data">DATA_BUNDLE</script>
+<script>
+JS_BUNDLE
+</script>
+</body>
+</html>
