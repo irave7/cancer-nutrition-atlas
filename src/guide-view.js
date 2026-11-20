@@ -23,29 +23,30 @@ function homeRow(ref,title,summary,meta) {
     '<small>'+safe(meta)+'</small></span>'+symbol('right');
   return '<li>'+action(ref.type,content,target,'home-row')+'</li>';
 }
-function homeSummaryCard(title,icon,content,links) {
-  return '<article class="pane executive-card"><h2>'+symbol(icon)+safe(title)+'</h2><h3>'+safe(content.headline)+'</h3>'+
-    '<p>'+safe(content.detail)+'</p>'+links+'</article>';
-}
 function homeExecutive(content) {
   const overview = content.executive;
+  const matches = overview.matches.map(match=>{
+    const clauses = match.policies.map(ref=>homeRow(ref,ref.label,ref.summary,ref.meta)).join('');
+    const example = match.practice;
+    return '<article class="pane executive-match"><h3>'+safe(match.title)+'</h3>'+
+      '<div class="executive-clause"><h4>'+symbol('doc')+'核心政策条款</h4><ul>'+clauses+'</ul></div>'+
+      '<div class="executive-practice"><h4>'+symbol('star')+'对应的国内做法</h4><ul>'+
+      homeRow(example,example.label,example.summary,example.meta)+'</ul></div></article>';
+  }).join('');
   const hospitals = overview.hospitals.map(entry=>{
     const hospital = guide.fujian.hospitals.find(item=>item.id===entry.id);
     const label = '<span><strong>'+safe(hospital.short)+'</strong><small>'+safe(entry.disease)+'</small></span>'+
       '<span class="executive-hospital-focus">'+safe(entry.focus)+'</span><span class="executive-hospital-basis">'+safe(entry.basis)+'</span>'+symbol('right');
     return '<li>'+action('fujian-hospital',label,'data-hospital="'+attr(hospital.id)+'"','executive-hospital')+'</li>';
   }).join('');
-  return '<section class="executive-hero" aria-labelledby="executive-title"><div class="executive-lead">'+
-    '<h1 id="executive-title">'+safe(content.title)+'</h1><p class="executive-takeaway">'+safe(overview.takeaway)+'</p>'+
-    '<p class="executive-scope">'+safe(content.subtitle)+'</p><div class="actions executive-actions">'+
-    action('view','查看福建试点','data-view="fujian"','button executive-primary')+
-    action('benchmark-all','三院并排对照','','button executive-secondary')+'</div></div>'+
-    '<div class="executive-pilot"><span>建议试点周期</span><strong>'+safe(overview.pilotDuration)+'</strong></div></section>'+
-    '<section class="executive-cards" aria-label="政策、标杆与试点验收">'+
-    homeSummaryCard('政策依据','doc',overview.policy,guideReferences(overview.policy.refs))+
-    homeSummaryCard('国内标杆','star',overview.benchmark,guideReferences(overview.benchmark.refs))+
-    homeSummaryCard('试点怎么验收','check',overview.acceptance,'<div class="actions">'+action('fujian-tab','查看验收指标','data-tab="metrics"')+'</div>')+'</section>'+
-    '<section class="pane executive-hospitals" aria-labelledby="executive-hospitals-title"><h2 id="executive-hospitals-title">福建三院拟从哪里切入</h2>'+
+  return '<section class="executive-hero" aria-labelledby="executive-title">'+
+    '<h1 id="executive-title">'+safe(content.title)+'</h1><p class="executive-takeaway">'+safe(overview.takeaway)+'</p></section>'+
+    '<section class="executive-matching" aria-labelledby="executive-matching-title"><h2 id="executive-matching-title">核心条款与国内先进做法</h2>'+
+    '<div class="executive-matches">'+matches+'</div></section>'+
+    '<section class="pane executive-hospitals" aria-labelledby="executive-hospitals-title"><header class="executive-hospital-header"><div>'+
+    '<h2 id="executive-hospitals-title">福建三院拟试点</h2><p>'+safe(overview.pilotSummary)+'</p></div><div class="actions">'+
+    action('view','查看福建试点','data-view="fujian"','button primary')+
+    action('benchmark-all','三院并排对照')+action('fujian-tab','查看验收指标','data-tab="metrics"')+'</div></header>'+
     '<ul>'+hospitals+'</ul></section>';
 }
 function homePathway(content) {

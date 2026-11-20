@@ -2,7 +2,6 @@
   "updateDate": "2026-11-20",
   "overview": {
     "title": "癌症营养全周期管理",
-    "subtitle": "建议依托福建三院现有的医助协作，以结直肠癌和宫颈癌为切入病种。",
     "stages": [
       {
         "id": "entry",
@@ -131,46 +130,7 @@
       ]
     },
     "executive": {
-      "takeaway": "从院内营养筛查开始，跟进到出院后首次复评。",
-      "pilotDuration": "90 天",
-      "policy": {
-        "headline": "入院后 24 小时内完成首次营养筛查",
-        "detail": "国家癌症防治行动也把营养支持纳入规范诊疗。",
-        "refs": [
-          {
-            "type": "policy",
-            "id": "clinical-department-2022",
-            "clause": "screen24",
-            "label": "住院筛查条款"
-          },
-          {
-            "type": "policy",
-            "id": "national-cancer-plan",
-            "clause": "support",
-            "label": "癌症防治条款"
-          }
-        ]
-      },
-      "benchmark": {
-        "headline": "邵逸夫筛查率 64.31% → 100%",
-        "detail": "2021—2024 年院方研究的院级过程指标。天津另有门诊、日间、住院和居家接续案例。",
-        "refs": [
-          {
-            "type": "case",
-            "id": "zhejiang-quality",
-            "label": "邵逸夫质控"
-          },
-          {
-            "type": "case",
-            "id": "tianjin-one-stop",
-            "label": "天津全程服务"
-          }
-        ]
-      },
-      "acceptance": {
-        "headline": "先看交接签收和按期复评",
-        "detail": "院方负责营养评估和方案，医助跟进转介、交接及复评安排。"
-      },
+      "takeaway": "国家政策已把营养支持纳入癌症诊疗。",
       "hospitals": [
         {
           "id": "cancer",
@@ -190,7 +150,86 @@
           "focus": "确认妇瘤患者的营养接单团队",
           "basis": "已有手术、放化疗和专科随访的公开案例。"
         }
-      ]
+      ],
+      "matches": [
+        {
+          "title": "住院筛查与评估",
+          "policies": [
+            {
+              "type": "policy",
+              "id": "clinical-department-2022",
+              "clause": "screen24",
+              "label": "临床营养科建设与管理指南（试行）",
+              "summary": "入院后 24 小时内完成首次营养筛查。",
+              "meta": "附件第七条"
+            },
+            {
+              "type": "policy",
+              "id": "quality-2026",
+              "clause": "assessment",
+              "label": "2026 年各专业质控工作改进目标",
+              "summary": "提高住院患者营养评估率。",
+              "meta": "临床营养专业 · PIT-2026-17"
+            }
+          ],
+          "practice": {
+            "type": "case",
+            "id": "zhejiang-quality",
+            "label": "邵逸夫医院 · 筛评纳入质控",
+            "summary": "筛查率 64.31% → 100%，有风险患者的进一步评估率升至 49.82%。",
+            "meta": "2021—2024 年院级过程指标"
+          }
+        },
+        {
+          "title": "治疗期营养支持",
+          "policies": [
+            {
+              "type": "policy",
+              "id": "national-cancer-plan",
+              "clause": "support",
+              "label": "癌症防治行动实施方案",
+              "summary": "癌症规范诊疗应提供营养支持。",
+              "meta": "五（十四）加强诊疗规范化管理"
+            }
+          ],
+          "practice": {
+            "type": "case",
+            "id": "hunan-radiotherapy",
+            "label": "湖南省肿瘤医院 · 放疗病房",
+            "summary": "放疗示范病房开展营养筛评、分层干预，并根据治疗情况复评。",
+            "meta": "示范病房研究"
+          }
+        },
+        {
+          "title": "出院接续与院外随访",
+          "policies": [
+            {
+              "type": "policy",
+              "id": "clinical-nutrition-2024",
+              "clause": "continuity",
+              "label": "关于进一步推进临床营养工作的通知",
+              "summary": "营养服务纳入医联体，向基层延伸。",
+              "meta": "第二部分末句"
+            },
+            {
+              "type": "policy",
+              "id": "national-nutrition-plan",
+              "clause": "continuity",
+              "label": "国民营养计划（2017—2030 年）",
+              "summary": "推进医院、社区与家庭长期营养管理。",
+              "meta": "三（四）临床营养行动第 3 段"
+            }
+          ],
+          "practice": {
+            "type": "case",
+            "id": "sichuan-remote-monitor",
+            "label": "四川省肿瘤医院 · 居家营养随访",
+            "summary": "院方披露远程监测居家营养记录，以及县、乡、村三级家庭营养服务模式。",
+            "meta": "院方服务介绍"
+          }
+        }
+      ],
+      "pilotSummary": "建议依托现有医助协作，从结直肠癌、宫颈癌切入，验证出院交接签收及首次复评。"
     }
   },
   "fujian": {
