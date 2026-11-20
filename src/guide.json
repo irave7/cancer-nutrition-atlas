@@ -130,27 +130,7 @@
       ]
     },
     "executive": {
-      "takeaway": "国家政策已把营养支持纳入癌症诊疗。",
-      "hospitals": [
-        {
-          "id": "cancer",
-          "disease": "结直肠癌",
-          "focus": "衔接术前营养会诊和术后复评",
-          "basis": "已有入院评估和术后监测的研究记录。"
-        },
-        {
-          "id": "union",
-          "disease": "结直肠癌",
-          "focus": "验证择日住院及转入手术病区的营养交接",
-          "basis": "公开资料记录了择日住院和放化疗后手术。"
-        },
-        {
-          "id": "women",
-          "disease": "宫颈癌",
-          "focus": "确认妇瘤患者的营养接单团队",
-          "basis": "已有手术、放化疗和专科随访的公开案例。"
-        }
-      ],
+      "takeaway": "政策推动癌症营养支持从院内延伸到居家。",
       "matches": [
         {
           "title": "住院筛查与评估",
@@ -175,10 +155,13 @@
           "practice": {
             "type": "case",
             "id": "zhejiang-quality",
-            "label": "邵逸夫医院 · 筛评纳入质控",
+            "label": "邵逸夫医院",
             "summary": "筛查率 64.31% → 100%，有风险患者的进一步评估率升至 49.82%。",
             "meta": "2021—2024 年院级过程指标"
-          }
+          },
+          "id": "entry",
+          "policyLine": "入院 24 小时内筛查",
+          "practiceLine": "跟踪筛查和评估完成率"
         },
         {
           "title": "治疗期营养支持",
@@ -195,10 +178,13 @@
           "practice": {
             "type": "case",
             "id": "hunan-radiotherapy",
-            "label": "湖南省肿瘤医院 · 放疗病房",
+            "label": "湖南省肿瘤医院",
             "summary": "放疗示范病房开展营养筛评、分层干预，并根据治疗情况复评。",
             "meta": "示范病房研究"
-          }
+          },
+          "id": "treatment",
+          "policyLine": "治疗期提供营养支持",
+          "practiceLine": "放疗期间复评营养状况"
         },
         {
           "title": "出院接续与院外随访",
@@ -223,13 +209,16 @@
           "practice": {
             "type": "case",
             "id": "sichuan-remote-monitor",
-            "label": "四川省肿瘤医院 · 居家营养随访",
+            "label": "四川省肿瘤医院",
             "summary": "院方披露远程监测居家营养记录，以及县、乡、村三级家庭营养服务模式。",
             "meta": "院方服务介绍"
-          }
+          },
+          "id": "continuity",
+          "policyLine": "出院后持续管理营养",
+          "practiceLine": "远程跟进居家营养"
         }
       ],
-      "pilotSummary": "建议依托现有医助协作，从结直肠癌、宫颈癌切入，验证出院交接签收及首次复评。"
+      "pilotSummary": "结直肠癌与宫颈癌"
     }
   },
   "fujian": {

@@ -28,26 +28,19 @@ function homeExecutive(content) {
   const matches = overview.matches.map(match=>{
     const clauses = match.policies.map(ref=>homeRow(ref,ref.label,ref.summary,ref.meta)).join('');
     const example = match.practice;
-    return '<article class="pane executive-match"><h3>'+safe(match.title)+'</h3>'+
-      '<div class="executive-clause"><h4>'+symbol('doc')+'核心政策条款</h4><ul>'+clauses+'</ul></div>'+
-      '<div class="executive-practice"><h4>'+symbol('star')+'对应的国内做法</h4><ul>'+
-      homeRow(example,example.label,example.summary,example.meta)+'</ul></div></article>';
+    return '<details class="executive-match" data-home-match="'+attr(match.id)+'"'+(state.homeMatchesOpen.has(match.id)?' open':'')+'>'+
+      '<summary><strong>'+safe(match.policyLine)+'</strong><span class="executive-arrow" aria-hidden="true">→</span>'+
+      '<span class="executive-example"><strong>'+safe(example.label)+'</strong><small>'+safe(match.practiceLine)+'</small></span>'+
+      '<span class="executive-toggle" aria-hidden="true"></span></summary>'+
+      '<div class="executive-detail" aria-label="'+attr(match.title)+'"><div class="executive-clause"><h3>政策条款</h3><ul>'+clauses+'</ul></div>'+
+      '<div class="executive-practice"><h3>案例证据</h3><ul>'+homeRow(example,example.label,example.summary,example.meta)+'</ul></div></div></details>';
   }).join('');
-  const hospitals = overview.hospitals.map(entry=>{
-    const hospital = guide.fujian.hospitals.find(item=>item.id===entry.id);
-    const label = '<span><strong>'+safe(hospital.short)+'</strong><small>'+safe(entry.disease)+'</small></span>'+
-      '<span class="executive-hospital-focus">'+safe(entry.focus)+'</span><span class="executive-hospital-basis">'+safe(entry.basis)+'</span>'+symbol('right');
-    return '<li>'+action('fujian-hospital',label,'data-hospital="'+attr(hospital.id)+'"','executive-hospital')+'</li>';
-  }).join('');
-  return '<section class="executive-hero" aria-labelledby="executive-title">'+
-    '<h1 id="executive-title">'+safe(content.title)+'</h1><p class="executive-takeaway">'+safe(overview.takeaway)+'</p></section>'+
-    '<section class="executive-matching" aria-labelledby="executive-matching-title"><h2 id="executive-matching-title">核心条款与国内先进做法</h2>'+
-    '<div class="executive-matches">'+matches+'</div></section>'+
-    '<section class="pane executive-hospitals" aria-labelledby="executive-hospitals-title"><header class="executive-hospital-header"><div>'+
-    '<h2 id="executive-hospitals-title">福建三院拟试点</h2><p>'+safe(overview.pilotSummary)+'</p></div><div class="actions">'+
-    action('view','查看福建试点','data-view="fujian"','button primary')+
-    action('benchmark-all','三院并排对照')+action('fujian-tab','查看验收指标','data-tab="metrics"')+'</div></header>'+
-    '<ul>'+hospitals+'</ul></section>';
+  return '<div class="executive-overview"><header class="executive-hero"><h1>'+safe(content.title)+'</h1>'+
+    '<p>'+safe(overview.takeaway)+'</p></header>'+
+    '<section class="pane executive-matching" aria-label="政策与国内做法对照"><div class="executive-column-head" aria-hidden="true">'+
+    '<span>政策要点</span><span>国内做法</span></div>'+matches+'</section>'+
+    '<section class="executive-pilot" aria-labelledby="executive-pilot-title"><div><h2 id="executive-pilot-title">福建三院拟试点</h2>'+
+    '<p>'+safe(overview.pilotSummary)+'</p></div>'+action('view','查看试点方案'+symbol('right'),'data-view="fujian"','button primary')+'</section></div>';
 }
 function homePathway(content) {
   const active = content.stages.find(stage=>stage.id===state.homeStage) || content.stages[0];

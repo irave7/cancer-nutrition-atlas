@@ -61,7 +61,8 @@ assert all(ref["id"] in case_ids for ref in guide["flagships"])
 flow_stages = guide['overview']['stages']
 assert len(flow_stages) == len({stage['id'] for stage in flow_stages})
 assert sorted(ref['id'] for stage in flow_stages for ref in stage['cases']) == sorted(ref['id'] for ref in guide['flagships'])
-assert [item['id'] for item in guide['overview']['executive']['hospitals']] == [item['id'] for item in guide['fujian']['hospitals']]
+matches = guide['overview']['executive']['matches']
+assert len(matches) == len({match['id'] for match in matches})
 content.update(
     guide=guide,
     chinaMap='data:image/jpeg;base64,' + b64encode((SRC / 'maps/china.jpg').read_bytes()).decode('ascii'),

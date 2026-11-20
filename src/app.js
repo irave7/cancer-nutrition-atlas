@@ -111,7 +111,7 @@ const route = {view:initialView,caseId:initialCase?.id || '',caseTab:'overview',
 const state = {
   route, undo:[], redo:[], showSidebar:true, presentation:false,
   compare:initialView==='compare' ? fujianComparisons.get(linkedDetail)?.slice(1) || [] : [], compareMissing:false,
-  homeStage:guide.overview.stages[0].id, homeEvidenceOpen:false,
+  homeStage:guide.overview.stages[0].id, homeEvidenceOpen:false, homeMatchesOpen:new Set(),
   fujianTab:'actions',fujianHospital:initialHospital?.id || 'cancer',benchmarkAll:initialView==='benchmarks' && linkedDetail==='all',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
@@ -776,6 +776,11 @@ byId('global-query').addEventListener('keydown',event=>{
 
 document.addEventListener('toggle',event=>{
   if (event.target.id==='home-evidence') state.homeEvidenceOpen=event.target.open;
+  const match = event.target.dataset?.homeMatch;
+  if (match) {
+    if (event.target.open) state.homeMatchesOpen.add(match);
+    else state.homeMatchesOpen.delete(match);
+  }
 },true);
 document.addEventListener('click',async event=>{
   const control = event.target.closest('[data-action]');
