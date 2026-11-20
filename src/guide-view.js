@@ -54,6 +54,20 @@ function fujianCards(entries,layout='') {
   return '<div class="guide-cards '+layout+'">'+entries.map(entry=>
     '<article class="pane guide-card"><h3>'+safe(entry.title)+'</h3><p>'+safe(entry.detail)+'</p>'+guideReferences(entry.refs)+'</article>').join('')+'</div>';
 }
+function fujianHospitals(hospitals) {
+  const active=hospitals.find(entry=>entry.id===state.fujianHospital) || hospitals[0];
+  return '<section class="guide-block" id="guide-fujian-hospitals" aria-label="三院方案"><div class="guide-section-head">'+
+    '<h2>三院方案</h2><div class="segmented fujian-segments" aria-label="选择医院">'+hospitals.map(entry=>
+      action('fujian-hospital',safe(entry.short),'id="fujian-hospital-'+attr(entry.id)+'" data-hospital="'+attr(entry.id)+
+      '" aria-controls="fujian-hospital-panel" aria-pressed="'+press(entry===active)+'"','')).join('')+'</div></div>'+
+    '<article class="pane hospital-plan" id="fujian-hospital-panel" aria-labelledby="fujian-hospital-title">'+
+    '<div class="hospital-heading"><h3 id="fujian-hospital-title">'+safe(active.name)+'</h3>'+badge(active.scenario,'blue')+'</div>'+
+    '<div class="hospital-basis"><div><h4>院方公开基础</h4><p>'+safe(active.basis)+'</p></div>'+
+    '<div><h4>医助怎么接入</h4><p>'+safe(active.entry)+'</p></div></div>'+
+    '<ol class="hospital-steps">'+active.steps.map(step=>'<li><h4>'+safe(step.label)+'</h4>'+
+      '<dl><dt>医助协助</dt><dd>'+safe(step.aid)+'</dd><dt>院方负责</dt><dd>'+safe(step.clinical)+'</dd></dl></li>').join('')+'</ol>'+
+    '<p class="hospital-check">'+safe(active.check)+'</p>'+guideReferences(active.refs)+'</article></section>';
+}
 function fujianPage() {
   const content=guide.fujian;
   const tabs={
@@ -63,13 +77,12 @@ function fujianPage() {
     commercial:['合作与预算',()=>fujianCards(content.commercial,'action-cards')]
   };
   const [,renderTab]=tabs[state.fujianTab] || tabs.actions;
-  return head(content.title,content.subtitle,[],'福建 · 公司项目视角')+guideThesis('先从出院交接切入',content.thesis,
-    action('guide-section','查看项目方案','data-section="fujian-plan"','button primary')+
+  return head(content.title,content.subtitle,[],'福建 · 院内医助协作')+guideThesis('从门诊和病房开始',content.thesis,
+    action('guide-section','查看三院方案','data-section="fujian-hospitals"','button primary')+
     action('fujian-map',symbol('map')+'查看福建案例')+shareButton('fujian'))+
+    fujianHospitals(content.hospitals)+
     '<section class="guide-block" aria-label="合作分工"><div class="guide-section-head"><h2>谁负责什么</h2></div>'+
     fujianCards(content.roles)+'</section>'+
-    '<section class="guide-block" aria-label="福建合作入口"><div class="guide-section-head"><h2>福建合作从哪里谈起</h2></div>'+
-    fujianCards(content.foundation)+'</section>'+
     '<section class="guide-block" id="guide-fujian-plan" aria-label="公司项目方案"><div class="guide-section-head"><h2>公司项目方案</h2><div class="segmented fujian-segments" aria-label="公司项目方案视图">'+Object.entries(tabs).map(([id,[label]])=>
       action('fujian-tab',safe(label),'id="fujian-tab-'+id+'" data-tab="'+id+'" aria-controls="fujian-content" aria-pressed="'+press(id===state.fujianTab)+'"','')).join('')+'</div></div>'+
     '<div id="fujian-content">'+renderTab()+'</div></section><p class="guide-footnote">'+safe(content.guardrail)+'</p>';

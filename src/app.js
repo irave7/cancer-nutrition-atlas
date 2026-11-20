@@ -99,7 +99,7 @@ const initialView = viewFromLink();
 const route = {view:initialView,caseId:(initialView==='world'?initialWorld:initialChina)?.id || '',caseTab:'overview',focusedStep:'',docId:'clinical-nutrition-2024',clauseId:'priority',panelDoc:'',panelClause:''};
 const state = {
   route, undo:[], redo:[], showSidebar:true, presentation:false, compare:[], compareMissing:false,
-  fujianTab:'actions',
+  fujianTab:'actions',fujianHospital:'cancer',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
     world:{mode:'map',selected:initialWorld?.id, zoom:1,x:0,y:0,moreFilters:false}
@@ -758,6 +758,12 @@ document.addEventListener('click',async event=>{
     case 'show-flagships': openChina({featured:true}); break;
     case 'flagship-filter': context.featured=!context.featured; syncFilterResults(); renderAndFocus('case-flagship'); break;
     case 'fujian-tab': state.fujianTab=options.tab; renderAndFocus('fujian-tab-'+options.tab); break;
+    case 'fujian-hospital':
+      if (guide.fujian.hospitals.some(hospital=>hospital.id===options.hospital)) {
+        state.fujianHospital=options.hospital;
+        renderAndFocus('fujian-hospital-'+options.hospital);
+      }
+      break;
     case 'share-section': {
       const url = new URL('#'+options.view,location.href);
       try { await navigator.clipboard.writeText(url.href); control.textContent='已复制链接'; }

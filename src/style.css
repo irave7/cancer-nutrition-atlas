@@ -398,6 +398,18 @@ dialog::backdrop { background:#0e24446a; backdrop-filter:blur(4px); }
 .guide-card dd {margin:0}
 .guide-card .metric-definition {color:var(--active);font-weight:650}
 .fujian-segments {flex-wrap:wrap;max-width:100%}
+.hospital-plan {padding:clamp(13px,2vw,21px)}
+.hospital-heading {display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.hospital-heading h3 {font-size:1.16rem;line-height:1.38}
+.hospital-basis,.hospital-steps {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.hospital-basis p,.hospital-steps dd {font-size:.9rem;line-height:1.62}
+.hospital-basis h4,.hospital-steps h4 {font-size:.94rem;margin:0 0 4px}
+.hospital-steps {list-style:none;padding:0;margin:12px 0 8px}
+.hospital-steps li {border:1px solid var(--line-subtle);border-radius:9px;padding:9px 10px;background:var(--soft)}
+.hospital-steps dl,.hospital-steps dd {margin:0}
+.hospital-steps dt {font-size:.76rem;color:var(--accent);font-weight:700;margin:4px 0 1px}
+.hospital-check {font-size:.86rem;line-height:1.6;color:var(--mint);background:var(--mint-fill);padding:7px 9px;border-radius:8px;margin-top:10px}
+@media(max-width:620px){.hospital-basis,.hospital-steps{grid-template-columns:1fr}}
 .flagship-filter[aria-pressed="true"] {background:var(--amber-fill);color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--line))}
 .legend-star {color:var(--amber);font-weight:800}
 .pin-flag {position:absolute;right:calc(100% - 4px);top:-3px;font-size:10px;line-height:1;border-radius:100%;background:#fff4cb;color:#74490f;border:1px solid #c69242;padding:1px;box-shadow:0 1px 2px #3f2c2787}
