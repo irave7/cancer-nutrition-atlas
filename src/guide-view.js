@@ -24,23 +24,31 @@ function homeRow(ref,title,summary,meta) {
   return '<li>'+action(ref.type,content,target,'home-row')+'</li>';
 }
 function guidePage() {
-  const content=guide.overview;
-  const policyRows = content.policies.map(ref=>homeRow(ref,ref.label,ref.summary,ref.meta)).join('');
-  const caseRows = guide.flagships.map(entry=>homeRow({type:'case',id:entry.id},entry.home.name,entry.home.summary,words([entry.lens,entry.home.evidence]))).join('');
+  const content = guide.overview;
+  const active = content.stages.find(stage=>stage.id===state.homeStage) || content.stages[0];
+  const nodes = content.stages.map(stage=>{
+    const caption = '<span class="home-flow-icon">'+symbol(stage.icon)+'</span><span class="home-node-text"><strong>'+safe(stage.title)+'</strong><small>'+safe(stage.cue)+'</small></span>';
+    return '<li>'+action('home-stage',caption,'id="home-stage-'+attr(stage.id)+'" data-stage="'+attr(stage.id)+
+      '" aria-controls="home-stage-panel" aria-pressed="'+press(stage===active)+'"','home-flow-node')+'</li>';
+  }).join('');
+  const policyRows = active.policies.map(ref=>homeRow(ref,ref.label,ref.summary,ref.meta)).join('');
+  const caseRows = active.cases.map(ref=>{
+    const {home} = flagships.get(ref.id);
+    return homeRow(ref,home.name,home.summary,home.evidence);
+  }).join('');
   return '<div class="home-head">'+head(content.title,content.subtitle)+
     '<nav class="actions home-shortcuts" aria-label="常用入口">'+
-    action('guide-section','标杆案例','data-section="flagships"','button home-case-jump')+
     action('view',symbol('pin')+'福建应用','data-view="fujian"')+
     action('view',symbol('compare')+'三院案例对照','data-view="benchmarks"')+shareButton('guide')+'</nav></div>'+
-    '<div class="home-overview"><section class="pane home-panel home-policies" aria-labelledby="home-policies-title">'+
-    '<header><h2 id="home-policies-title">主要政策</h2>'+action('view','全部政策','data-view="policy"')+'</header>'+
-    '<ul>'+policyRows+'</ul></section>'+
-    '<section class="pane home-panel home-cases" id="guide-flagships" aria-labelledby="home-cases-title">'+
-    '<header><h2 id="home-cases-title">国内标杆案例</h2>'+action('show-flagships','在地图查看')+'</header>'+
-    '<ul>'+caseRows+'</ul></section></div>'+
-    '<details id="guide-cycle" class="pane home-cycle"><summary>全周期照护路径</summary><p>'+safe(content.thesis)+'</p><ol class="guide-cycle">'+
-    content.cycle.map(entry=>'<li><h3>'+safe(entry.label)+'</h3><p>'+safe(entry.summary)+'</p>'+guideReferences(entry.refs)+'</li>').join('')+'</ol>'+
-    '<p class="guide-footnote">'+safe(content.use)+'</p></details>';
+    '<section class="pane home-flow" aria-label="营养照护流程图"><ol class="home-flow-track">'+nodes+'</ol></section>'+
+    '<section class="pane home-stage-panel" id="home-stage-panel" aria-labelledby="home-stage-title">'+
+    '<header class="home-stage-header"><h2 id="home-stage-title">'+safe(active.title)+'</h2><p>'+safe(active.detail)+'</p></header>'+
+    '<div class="home-stage-evidence"><div class="home-evidence home-policies"><h3>'+symbol('doc')+'对应政策</h3><ul>'+policyRows+'</ul></div>'+
+    '<div class="home-evidence home-cases"><h3>'+symbol('star')+'国内标杆</h3><ul>'+caseRows+'</ul></div></div></section>'+
+    '<nav class="actions home-library" aria-label="查看完整资料">'+
+    action('view','查看政策库','data-view="policy"')+action('show-flagships','在地图查看标杆')+'</nav>'+
+    '<details class="home-palliative"><summary>'+safe(content.palliative.label)+'</summary><p>'+safe(content.palliative.summary)+'</p>'+
+    guideReferences(content.palliative.refs)+'</details>';
 }
 function fujianActions(content) {
   return '<div class="guide-cards action-cards">'+content.actions.map(entry=>'<article class="pane guide-card">'+badge(entry.layer,'blue')+

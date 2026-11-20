@@ -1,140 +1,135 @@
 {
   "updateDate": "2026-11-20",
   "overview": {
-    "title": "癌症营养政策与国内标杆",
-    "subtitle": "从入院筛评、治疗期支持到出院复评，查看政策依据和国内医院的做法。",
-    "thesis": "我理解的全周期营养管理，是把营养纳入抗肿瘤治疗和支持照护的共同计划。风险变化时能被发现，方案能随治疗调整，患者换病区或回家时有团队接手，出现异常时有渠道回到专科。流程是否闭合，关键看下一位负责人是否收到、是否完成复评，以及结果是否反馈。",
-    "cycle": [
+    "title": "癌症营养照护流程",
+    "subtitle": "点选一个环节，查看对应政策条款和国内标杆案例。",
+    "stages": [
       {
-        "label": "确诊与入院",
-        "summary": "在首次就诊、收治或治疗方案变化时识别营养风险。筛查用于分流；有风险时由合适的专业人员进一步评估。",
-        "refs": [
+        "id": "entry",
+        "title": "首诊筛评",
+        "icon": "search",
+        "cue": "识别营养风险",
+        "detail": "在首诊或入院时识别风险。筛查发现风险后，由临床营养专业人员进一步评估。",
+        "policies": [
           {
             "type": "policy",
             "id": "clinical-department-2022",
             "clause": "screen24",
-            "label": "筛查工作规范"
+            "label": "临床营养科建设与管理指南（试行）",
+            "summary": "住院首次营养筛查应在入院后 24 小时内完成。",
+            "meta": "国家卫生健康委办公厅 · 2022 年"
           },
           {
             "type": "policy",
-            "id": "pg-sga-2017",
-            "clause": "schedule",
-            "label": "评估时间与复评"
+            "id": "quality-2026",
+            "clause": "assessment",
+            "label": "2026 年各专业质控工作改进目标",
+            "summary": "临床营养专业将提高住院患者营养评估率列为年度目标。",
+            "meta": "临床营养专业 · PIT-2026-17"
+          }
+        ],
+        "cases": [
+          {
+            "type": "case",
+            "id": "zhejiang-quality"
           }
         ]
       },
       {
-        "label": "围治疗期",
-        "summary": "把营养目标、干预方式和复评时点写入照护计划。手术、放化疗等阶段的摄入、症状和耐受变化，应反馈给负责团队。",
-        "refs": [
+        "id": "treatment",
+        "title": "治疗期支持",
+        "icon": "cross",
+        "cue": "干预与动态复评",
+        "detail": "把营养支持纳入手术、放疗和化疗等治疗计划，按摄入、症状和耐受情况复评。",
+        "policies": [
           {
             "type": "policy",
             "id": "national-cancer-plan",
             "clause": "support",
-            "label": "癌症防治行动"
-          },
+            "label": "癌症防治行动实施方案",
+            "summary": "将营养支持纳入癌症规范诊疗，并衔接康复指导和长期护理。",
+            "meta": "国家癌症防治专项 · 2023—2030 年"
+          }
+        ],
+        "cases": [
           {
             "type": "case",
-            "id": "hunan-radiotherapy",
-            "label": "湖南放疗病房"
+            "id": "hunan-radiotherapy"
           }
         ]
       },
       {
-        "label": "离院与交接",
-        "summary": "在离院前确认营养状态与现行方案、需要观察的变化、接手团队和下一次联系。随诊或上门渠道和升级路径要能被患者及基层团队找到。",
-        "refs": [
+        "id": "discharge",
+        "title": "出院交接",
+        "icon": "doc",
+        "cue": "交付计划和联系人",
+        "detail": "离院前把营养计划、接手团队和首次复评时间交给患者及照护者，并确认接收方。",
+        "policies": [
           {
             "type": "policy",
             "id": "clinical-nutrition-2024",
             "clause": "continuity",
-            "label": "连续营养服务"
+            "label": "关于进一步推进临床营养工作的通知",
+            "summary": "将临床营养纳入医联体，支持下级医院接续治疗和服务延伸至基层。",
+            "meta": "国家卫生健康委办公厅 · 2024 年"
+          }
+        ],
+        "cases": [
+          {
+            "type": "case",
+            "id": "js-nj-headneck-triad"
           },
           {
             "type": "case",
-            "id": "bj-shijitan-h2h",
-            "label": "北京院家术后支持"
+            "id": "bj-shijitan-h2h"
           }
         ]
       },
       {
-        "label": "居家、康复与长期随访",
-        "summary": "根据风险和治疗安排计划复评。结合患者可获得的门诊、电话或家庭医生服务，记录摄入和状态变化，对接专科反馈。",
-        "refs": [
+        "id": "followup",
+        "title": "院外复评",
+        "icon": "link",
+        "cue": "随访、反馈与回转",
+        "detail": "按风险安排门诊或远程复评，记录摄入和体重等变化，异常由接手团队反馈给专科。",
+        "policies": [
           {
             "type": "policy",
             "id": "national-nutrition-plan",
             "clause": "continuity",
-            "label": "医院、社区、家庭衔接"
-          },
-          {
-            "type": "case",
-            "id": "js-nj-headneck-triad",
-            "label": "江苏三场景路径"
+            "label": "国民营养计划",
+            "summary": "推动癌症等慢性病的临床营养干预，衔接医院、社区与家庭。",
+            "meta": "国务院办公厅 · 2017—2030 年"
           }
-        ]
-      },
-      {
-        "label": "需要安宁疗护时",
-        "summary": "与患者、照护者和团队核对目标，重视进食舒适、口腔与吞咽安全，以及不同干预的负担。安排合适的随访或上门支持。",
-        "refs": [
+        ],
+        "cases": [
           {
-            "type": "policy",
-            "id": "palliative-2025",
-            "clause": "feeding",
-            "label": "进食和饮水照护"
+            "type": "case",
+            "id": "sichuan-remote-monitor"
           },
           {
             "type": "case",
-            "id": "fj-fz-changle-palliative",
-            "label": "福州长乐入户个案"
+            "id": "tianjin-one-stop"
           }
         ]
       }
     ],
-    "use": "页面中的政策关联用于追溯同类做法。政策效力看发文机关和适用人群，服务介绍看已披露流程，研究结果看设计、分母和随访时长。",
-    "policies": [
-      {
-        "type": "policy",
-        "id": "national-cancer-plan",
-        "clause": "support",
-        "label": "癌症防治行动实施方案",
-        "summary": "将营养支持纳入癌症规范诊疗，并衔接康复指导和长期护理。",
-        "meta": "国家癌症防治专项 · 2023—2030 年"
-      },
-      {
-        "type": "policy",
-        "id": "national-nutrition-plan",
-        "clause": "continuity",
-        "label": "国民营养计划",
-        "summary": "推动癌症等慢性病的临床营养干预，衔接医院、社区与家庭。",
-        "meta": "国务院办公厅 · 2017—2030 年"
-      },
-      {
-        "type": "policy",
-        "id": "clinical-nutrition-2024",
-        "clause": "priority",
-        "label": "关于进一步推进临床营养工作的通知",
-        "summary": "将肿瘤患者列为重点筛评人群，推动营养参与多学科诊疗和医联体接续。",
-        "meta": "国家卫生健康委办公厅 · 2024 年"
-      },
-      {
-        "type": "policy",
-        "id": "clinical-department-2022",
-        "clause": "screen24",
-        "label": "临床营养科建设与管理指南（试行）",
-        "summary": "入院后 24 小时内完成首次筛查。阳性者在营养团队收到申请后 24 小时内评估。",
-        "meta": "国家卫生健康委办公厅 · 2022 年"
-      },
-      {
-        "type": "policy",
-        "id": "quality-2026",
-        "clause": "assessment",
-        "label": "2026 年各专业质控工作改进目标",
-        "summary": "临床营养专业将提高住院患者营养评估率列为年度目标。",
-        "meta": "临床营养专业 · PIT-2026-17"
-      }
-    ]
+    "palliative": {
+      "label": "按需查阅安宁疗护",
+      "summary": "需要安宁疗护时，与患者和照护者共同确认营养照护目标，关注进食舒适、口腔与吞咽安全。",
+      "refs": [
+        {
+          "type": "policy",
+          "id": "palliative-2025",
+          "clause": "feeding",
+          "label": "进食和饮水照护"
+        },
+        {
+          "type": "case",
+          "id": "fj-fz-changle-palliative",
+          "label": "福州长乐入户个案"
+        }
+      ]
+    }
   },
   "fujian": {
     "title": "三家医院的院内外营养全流程方案",
@@ -755,7 +750,7 @@
       "bounds": "路径及规模来自机构会议报告，按来源所述时段与人次解读。",
       "home": {
         "name": "天津市肿瘤医院",
-        "summary": "把门诊、日间医疗、住院和居家营养服务纳入同一流程。",
+        "summary": "门诊、日间、住院和居家共用营养流程，患者可在院外记录膳食并对接复诊。",
         "evidence": "院方公开报告"
       }
     },
@@ -777,7 +772,7 @@
       "bounds": "适用于原研究披露的放疗示范病房人群。",
       "home": {
         "name": "湖南省肿瘤医院",
-        "summary": "放疗示范病房公开出院后第 1 周、第 1 个月和第 3 个月的随访安排。",
+        "summary": "放疗示范病房按风险安排营养评估、分层支持和治疗期间复评。",
         "evidence": "示范病房研究"
       }
     },
@@ -788,7 +783,7 @@
       "bounds": "为病种特定的研究流程，迁移需核对福建县域团队与信息系统。",
       "home": {
         "name": "江苏省人民医院",
-        "summary": "头颈肿瘤放化疗期间用共享档案连接医院、社区和家庭。",
+        "summary": "头颈肿瘤放化疗研究在出院前联系社区团队，交接资料并安排延续随访。",
         "evidence": "150 例单中心研究"
       }
     },
@@ -799,7 +794,7 @@
       "bounds": "研究纳入 152 例老年胃肠道肿瘤患者，需结合单中心、短期随访和干预组合解读。",
       "home": {
         "name": "北京世纪坛医院",
-        "summary": "老年胃肠肿瘤术后使用家庭营养计划、摄入记录和每周视频回访。",
+        "summary": "胃肠肿瘤术后研究在出院前制定家庭膳食计划，安排摄入记录和视频回访。",
         "evidence": "152 例单中心研究"
       }
     }

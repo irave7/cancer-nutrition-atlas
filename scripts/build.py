@@ -58,6 +58,9 @@ for hospital, comparison in benchmarks.items():
     assert all(1 <= len(module['references']) <= 2 and module['policy'] for module in modules), hospital
 assert len(guide["flagships"]) == len({ref["id"] for ref in guide["flagships"]})
 assert all(ref["id"] in case_ids for ref in guide["flagships"])
+flow_stages = guide['overview']['stages']
+assert len(flow_stages) == len({stage['id'] for stage in flow_stages})
+assert sorted(ref['id'] for stage in flow_stages for ref in stage['cases']) == sorted(ref['id'] for ref in guide['flagships'])
 content.update(
     guide=guide,
     chinaMap='data:image/jpeg;base64,' + b64encode((SRC / 'maps/china.jpg').read_bytes()).decode('ascii'),

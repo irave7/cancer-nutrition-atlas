@@ -111,6 +111,7 @@ const route = {view:initialView,caseId:initialCase?.id || '',caseTab:'overview',
 const state = {
   route, undo:[], redo:[], showSidebar:true, presentation:false,
   compare:initialView==='compare' ? fujianComparisons.get(linkedDetail)?.slice(1) || [] : [], compareMissing:false,
+  homeStage:guide.overview.stages[0].id,
   fujianTab:'actions',fujianHospital:initialHospital?.id || 'cancer',benchmarkAll:initialView==='benchmarks' && linkedDetail==='all',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
@@ -780,6 +781,12 @@ document.addEventListener('click',async event=>{
   const context = state.scopes[state.route.view];
   switch (options.action) {
     case 'view': setView(options.view); break;
+    case 'home-stage':
+      if (state.route.view==='guide' && guide.overview.stages.some(stage=>stage.id===options.stage)) {
+        state.homeStage=options.stage;
+        renderAndFocus('home-stage-'+options.stage);
+      }
+      break;
     case 'guide-section': byId('guide-'+options.section)?.scrollIntoView({block:'start'}); break;
     case 'fujian-map': openChina({region:'福建'}); break;
     case 'show-flagships': openChina({featured:true}); break;
