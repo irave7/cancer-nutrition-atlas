@@ -4,7 +4,8 @@ function guideReference(ref) {
     case:['case','data-id'], policy:['policy','data-id'], view:['view','data-view'], section:['guide-section','data-section']
   };
   const [operation,attribute] = routes[ref.type];
-  return action(operation,safe(ref.label),attribute+'="'+attr(ref.id)+'"'+(ref.clause?' data-clause="'+attr(ref.clause)+'"':''));
+  return action(operation,safe(ref.label),attribute+'="'+attr(ref.id)+'"'+(ref.clause?' data-clause="'+attr(ref.clause)+'"':'')+
+    (ref.region?' data-region="'+attr(ref.region)+'"':''));
 }
 function guideReferences(refs) {
   return refs?.length?'<div class="actions">'+refs.map(guideReference).join('')+'</div>':'';
@@ -61,7 +62,8 @@ function fujianHospitals(hospitals) {
       action('fujian-hospital',safe(entry.short),'id="fujian-hospital-'+attr(entry.id)+'" data-hospital="'+attr(entry.id)+
       '" aria-controls="fujian-hospital-panel" aria-pressed="'+press(entry===active)+'"','')).join('')+'</div></div>'+
     '<article class="pane hospital-plan" id="fujian-hospital-panel" aria-labelledby="fujian-hospital-title">'+
-    '<div class="hospital-heading"><h3 id="fujian-hospital-title">'+safe(active.name)+'</h3>'+badge(active.scenario,'blue')+'</div>'+
+    '<div class="hospital-heading"><h3 id="fujian-hospital-title">'+safe(active.name)+'</h3>'+badge(active.scenario,'blue')+
+    guideReference({...active.case,region:'福建'})+'</div>'+
     '<section class="hospital-evidence" aria-label="已公开的措施与案例"><h4>已公开的措施与案例</h4><ul class="hospital-sources">'+
       active.evidence.map(entry=>'<li><p class="hospital-source-meta">'+safe(entry.date)+' · '+safe(entry.kind)+'</p><h5>'+safe(entry.title)+'</h5><p>'+
         safe(entry.detail)+'</p>'+guideReferences(entry.refs)+'</li>').join('')+'</ul></section>'+
@@ -83,6 +85,7 @@ function fujianPage() {
   const [,renderTab]=tabs[state.fujianTab] || tabs.actions;
   return head(content.title,content.subtitle,[],'福建 · 院内医助协作')+guideThesis('从门诊和病房开始',content.thesis,
     action('guide-section','查看三院方案','data-section="fujian-hospitals"','button primary')+
+    action('compare-preset',symbol('compare')+'并排对比三院','data-set="'+attr(fujianCaseIds.join('|'))+'"')+
     action('fujian-map',symbol('map')+'查看福建案例')+shareButton('fujian'))+
     fujianHospitals(content.hospitals)+
     '<section class="guide-block" aria-label="合作分工"><div class="guide-section-head"><h2>谁负责什么</h2></div>'+

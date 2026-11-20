@@ -146,6 +146,276 @@
           "url": "https://wjw.fujian.gov.cn/xxgk/gzdt/bmdt/202609/t20260907_7209699.htm"
         }
       ]
+    },
+    {
+      "id": "fj-cancer-colorectal-nutrition",
+      "province": "福建",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "福州",
+      "institution": "福建省肿瘤医院",
+      "title": "结直肠癌术前营养支持与术后监测",
+      "date": "2026-10-21",
+      "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1982995/full",
+      "sourceType": "单中心前瞻性观察研究",
+      "sourceTitle": "结直肠癌根治术后体重轨迹与营养不良前瞻性研究",
+      "summary": "大肠外科联合营养科制定术前营养饮食计划有院方病例。两项独立研究分别记录入院营养评估和根治术后 6 个月内的体重监测及营养评估。",
+      "scope": "福建省肿瘤医院高龄直肠癌手术个案，以及另行发表的结直肠癌根治术前瞻性和回顾性队列。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "monitoring",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "205 例根治术研究在术后第 6 个月用 NRS-2002 筛查营养风险，再按研究标准评估营养不良。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "回顾性研究报告，院方在患者入院时常规开展患者主观整体营养评估（PG-SGA）。研究未披露现行覆盖率。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "院方病例记载，大肠外科在高龄直肠癌手术前联合营养科制定营养饮食计划。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "205 例根治术研究记录术前体重，并在术后第 7 天或离院前以及术后第 1、3、6 个月记录体重。"
+        },
+        {
+          "stage": "followup",
+          "detail": "前瞻性研究通过复诊或结构化电话记录患者术后体重。公开材料覆盖研究人群和研究窗口。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "院方病例中，大肠外科组织多学科术前评估，营养科参与制定计划。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "术后监测研究纳入",
+          "value": "205 例",
+          "context": "单中心纳入的结直肠癌根治术患者。"
+        },
+        {
+          "label": "研究中第 6 个月营养不良比例",
+          "value": "33.2%",
+          "context": "研究内 68/205 例，按 GLIM 判定。"
+        }
+      ],
+      "evidence": "院方病例和两项单中心研究分别覆盖不同患者。资料支持术前会诊、入院评估及研究随访，常规跨科交接、放化疗期营养复评和全院院外营养服务覆盖待核实。",
+      "evidenceType": "study",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "大肠外科联合营养科的术前工作，可对照临床营养参与多学科诊疗。"
+        },
+        {
+          "docId": "clinical-department-2022",
+          "clauseId": "records",
+          "reason": "评估记录的格式和共享可对照筛评工作规范。随访记录按研究口径解读。"
+        },
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "现行结直肠癌规范将营养支持纳入治疗全程。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "术后研究提供随访时间点参考。常规连续营养门诊或居家干预仍需核实。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "院方病例｜高龄直肠癌术前营养会诊与术后恢复（2025）",
+          "url": "https://www.fjszlyy.cn/xwzx/202505/t20250515_18253.htm"
+        },
+        {
+          "title": "入院 PG-SGA 回顾性研究（2026）",
+          "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1996149/full"
+        },
+        {
+          "title": "医院大肠外科服务介绍",
+          "url": "https://www.fjszlyy.cn/ksyzj/lcks/wk/dcwk/"
+        }
+      ]
+    },
+    {
+      "id": "fj-union-colorectal-nutrition",
+      "province": "福建",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "福州",
+      "institution": "福建医科大学附属协和医院",
+      "title": "直肠癌放化疗至手术与围术期营养支持",
+      "date": "2026-06-02",
+      "url": "https://link.springer.com/article/10.1186/s12866-026-05171-9",
+      "sourceType": "单中心回顾性队列研究",
+      "sourceTitle": "局部晚期直肠癌体重下降和体成分研究",
+      "summary": "既有队列记录局部晚期直肠癌术前放化疗、手术与肿瘤随访。另有左侧结直肠癌特殊手术队列，记录了围术期营养支持与术后并发症监测。",
+      "scope": "两项独立单中心研究分别纳入局部晚期直肠癌和接受特定淋巴结清扫的左侧结直肠癌患者。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "198 例局部晚期直肠癌研究使用治疗前体重变化与影像体成分分析。此为研究中的评估记录。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "143 例左侧结直肠癌手术研究描述特定清扫后的饮食及肠外营养安排，并记录乳糜腹水患者的营养支持。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "同一特定手术研究记录术后引流监测与恢复进食后的复查，适用于该并发症管理情境。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "省卫健委刊载报道确认结直肠外科病区已进驻择日住院中心，提供预住院手续与检查预约的衔接入口。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "放化疗后手术研究纳入",
+          "value": "198 例",
+          "context": "局部晚期直肠癌，包含体重和体成分的回顾性分析。"
+        },
+        {
+          "label": "特定手术营养支持研究纳入",
+          "value": "143 例",
+          "context": "左侧结直肠癌伴主动脉旁淋巴结清扫的独立队列。"
+        }
+      ],
+      "evidence": "两项研究人群与统计口径各自独立。院外记录主要对应肿瘤结局随访，常规放化疗期营养复评、出院营养计划交接和院外营养随访待核实。",
+      "evidenceType": "study",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "术前放化疗与手术路径可对照全程营养支持的病种规范。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "特定围术期病例中的营养支持可对照临床营养纳入诊疗。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "用于设计拟议的出院营养交接及院外复评。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "左侧结直肠癌特定手术与术后乳糜腹水管理原著（2025）",
+          "url": "https://link.springer.com/article/10.1007/s10151-025-03120-8"
+        },
+        {
+          "title": "直肠癌术前放化疗、手术与肿瘤结局随访研究（2025）",
+          "url": "https://link.springer.com/article/10.1186/s12893-025-02764-5"
+        },
+        {
+          "title": "省卫健委刊载｜择日住院中心的结直肠外科入口（2023）",
+          "url": "https://wjw.fujian.gov.cn/xxgk/gzdt/bmdt/202306/t20230605_6181765.htm"
+        }
+      ]
+    },
+    {
+      "id": "fj-women-cervical-care",
+      "province": "福建",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "福州",
+      "institution": "福建省妇产医院",
+      "title": "宫颈癌多学科诊疗与出院接续",
+      "date": "2026-08-24",
+      "url": "https://www.fjsfy.com/gzb/xwdt/202608/t20260826_11025.htm",
+      "sourceType": "医院公告与公开病例材料",
+      "sourceTitle": "福建省妇幼保健院公布宫颈癌全流程协同诊疗与质控成果",
+      "summary": "公开资料记录妇瘤手术后复查、五四北放疗团队的综合治疗与门诊随访，以及妇科肿瘤术后康复入口。宫颈癌专用营养流程尚无公开实施资料。",
+      "scope": "福建省妇幼保健院院级宫颈癌质控，以及五四北院区的放疗协作与术后康复服务。",
+      "category": "clinic",
+      "cancers": [
+        "宫颈癌"
+      ],
+      "steps": [
+        "coordination",
+        "discharge",
+        "followup"
+      ],
+      "process": [
+        {
+          "stage": "coordination",
+          "detail": "五四北院区共同发起妇儿精准放疗多学科协作平台。省妇幼院级宫颈癌筛诊治访协同项目有公开成果。"
+        },
+        {
+          "stage": "discharge",
+          "detail": "院方一例宫颈癌手术报道记录了出院前的专科复查安排，病例未注明手术院区。"
+        },
+        {
+          "stage": "followup",
+          "detail": "五四北放疗团队公开一例接受包含化疗及放疗的综合治疗并继续门诊随访的病例。该院区另有妇科恶性肿瘤术后淋巴水肿康复和随访服务。"
+        }
+      ],
+      "metrics": [],
+      "evidence": "已披露的是肿瘤诊疗、出院复查及康复随访。宫颈癌专病营养筛查、干预及院外营养复评待院方确认。放化疗个案未披露住院与日间安排。",
+      "evidenceType": "program",
+      "links": [
+        {
+          "docId": "fj-cervical-plan-2023",
+          "clauseId": "treatment-support",
+          "reason": "拟接入营养服务的政策依据。第四（一）明确将护理与营养纳入宫颈癌诊疗配套支持。"
+        },
+        {
+          "docId": "fj-health-15th",
+          "clauseId": "integrated",
+          "reason": "可用于讨论将营养支持接入现有诊疗与康复服务。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "拟议跨科、出院后营养接续可参考该条款。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "五四北院区｜放疗多学科协作平台（2023）",
+          "url": "https://www.fjsfy.com/gzb/xwdt/202306/t20230609_9375.htm"
+        },
+        {
+          "title": "省妇幼医院病例｜宫颈残端鳞癌手术及出院复查（2024）",
+          "url": "https://www.fjsfy.com/gzb/jkkp/szbj/202404/t20240424_9547.htm"
+        },
+        {
+          "title": "团队采访｜宫颈癌综合治疗与门诊随访个案（2025）",
+          "url": "https://finance.sina.com.cn/jjxw/2025-09-24/doc-infrqtxf9564251.shtml"
+        },
+        {
+          "title": "五四北院区｜术后淋巴水肿康复与随访（2026）",
+          "url": "https://www.fjsfy.com/gzb/xwdt/202601/t20260123_10750.htm"
+        }
+      ]
     }
   ],
   "policies": [

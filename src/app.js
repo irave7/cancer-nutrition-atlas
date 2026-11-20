@@ -4,6 +4,11 @@ const data = JSON.parse(document.getElementById('data').textContent);
 const guide = data.guide;
 const cases = new Map(data.cases.map(record => [record.id, record]));
 const policies = new Map(data.policies.map(policy => [policy.id, policy]));
+const fujianCaseIds = guide.fujian.hospitals.map(hospital=>hospital.case.id);
+const fujianComparisons = new Map([
+  ['fujian', ['福建三院营养路径与证据', ...fujianCaseIds]],
+  ['fujian-colorectal', ['结直肠癌围手术期营养', ...fujianCaseIds.filter(id=>cases.get(id).cancers.includes('结直肠癌')), 'henan-crc-surgery']]
+]);
 const flagships = new Map(guide.flagships.map(entry=>[entry.id,entry]));
 const byScope = {
   china: data.cases.filter(record => record.province),
@@ -91,14 +96,17 @@ function clearCriteria(context) {
 
 const initialChina = byScope.china.find(record => record.province === '湖南' && record.category === 'ward') || byScope.china[0];
 const initialWorld = byScope.world[0];
-function viewFromLink() {
-  const id = location.hash.slice(1);
-  return Object.hasOwn(nav,id) ? id : 'guide';
+function readLink() {
+  const [view,detail] = location.hash.slice(1).split('/');
+  return [Object.hasOwn(nav,view) ? view : 'guide',detail];
 }
-const initialView = viewFromLink();
-const route = {view:initialView,caseId:(initialView==='world'?initialWorld:initialChina)?.id || '',caseTab:'overview',focusedStep:'',docId:'clinical-nutrition-2024',clauseId:'priority',panelDoc:'',panelClause:''};
+const [initialView,linkedDetail] = readLink();
+const linkedCase = byScope[initialView]?.find(record=>record.id===linkedDetail);
+const initialCase = linkedCase || (initialView==='world'?initialWorld:initialChina);
+const route = {view:initialView,caseId:initialCase?.id || '',caseTab:'overview',focusedStep:'',docId:'clinical-nutrition-2024',clauseId:'priority',panelDoc:'',panelClause:''};
 const state = {
-  route, undo:[], redo:[], showSidebar:true, presentation:false, compare:[], compareMissing:false,
+  route, undo:[], redo:[], showSidebar:true, presentation:false,
+  compare:initialView==='compare' ? fujianComparisons.get(linkedDetail)?.slice(1) || [] : [], compareMissing:false,
   fujianTab:'actions',fujianHospital:'cancer',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
@@ -108,6 +116,7 @@ const state = {
   searchIndex:0, searchResults:[]
 };
 Object.values(state.scopes).forEach(clearCriteria);
+if (linkedCase) Object.assign(state.scopes[initialView],{region:regionOf(linkedCase),selected:linkedCase.id});
 const numberOfCountries = new Set(byScope.world.map(record=>record.country)).size;
 const numberOfClauses = data.policies.reduce((total,policy)=>total+policy.clauses.length,0);
 const provinceNames = data.regions.map(region=>region.name);
@@ -167,13 +176,14 @@ function historyMove(direction) {
   }
   render();
 }
-function revealCase(id,{scroll=false,tab='overview'}={}) {
+function revealCase(id,{scroll=false,tab='overview',region=''}={}) {
   const record = cases.get(id);
   if (!record) return;
   const view = record.province ? 'china' : 'world';
   const changingView = state.route.view !== view;
   const context = state.scopes[view];
-  if (!caseMatches(record,context)) clearCriteria(context);
+  if (region || !caseMatches(record,context)) clearCriteria(context);
+  if (region) context.region=region;
   context.selected = id;
   recordRoute({view,caseId:id,caseTab:tab,focusedStep:'',panelDoc:'',panelClause:''});
   renderAndFocus('case-title');
@@ -215,8 +225,15 @@ function renderNav() {
   document.querySelector('[data-action="forward"]').disabled = !state.redo.length;
   byId('app').classList.toggle('sidebar-hidden',!state.showSidebar);
   byId('app').classList.toggle('presenting',state.presentation);
-  if (location.hash !== '#'+state.route.view) {
-    history.replaceState(null,'','#'+state.route.view);
+  const {view,caseId} = state.route;
+  let hash = '#'+view;
+  if (view==='china' && fujianCaseIds.includes(caseId)) hash += '/'+caseId;
+  if (view==='compare') {
+    const preset = [...fujianComparisons].find(([, [, ...ids]])=>ids.join('|')===state.compare.join('|'));
+    if (preset) hash += '/'+preset[0];
+  }
+  if (location.hash !== hash) {
+    history.replaceState(null,'',hash);
   }
 }
 function head(title,description,statistics=[],kicker='') {
@@ -395,6 +412,7 @@ function caseInspector(record) {
 }
 function overview(record) {
   const distinction=flagships.get(record.id);
+  const hospital=guide.fujian.hospitals.find(entry=>entry.case.id===record.id);
   return '<p class="summary">'+safe(record.summary)+'</p>'+
     (record.scope?'<p class="meta"><strong>服务对象</strong> '+safe(record.scope)+'</p>':'')+
     (record.cancers.length ? '<div class="badges" aria-label="案例涉及癌种">'+record.cancers.map(name=>badge(name)).join('')+'</div>' : '')+
@@ -403,7 +421,8 @@ function overview(record) {
       action('case-tab',safe(stepLabels[step]),'data-tab="pathway" data-step="'+step+'"','')).join('')+'</div>'+
     (record.metrics.length ? '<h3>公开指标与节点</h3>'+metricsMarkup(record) : '')+
     '<div class="actions">'+action('case-tab','查看 '+record.links.length+' 条政策'+(record.country?'对照':'关联'),'data-tab="links"','button primary')+
-    anchor(record.url,'打开原始材料','button')+action('toggle-compare',state.compare.includes(record.id)?'移出对比':'加入对比','data-id="'+attr(record.id)+'"')+'</div>';
+    anchor(record.url,'打开原始材料','button')+action('toggle-compare',state.compare.includes(record.id)?'移出对比':'加入对比','data-id="'+attr(record.id)+'"')+
+    (hospital?action('fujian-hospital','查看拟议医助方案','data-hospital="'+attr(hospital.id)+'"'):'')+'</div>';
 }
 function pathway(record) {
   const documented = record.steps.map(step=>badge(stepLabels[step],'blue')).join('');
@@ -418,7 +437,7 @@ function pathway(record) {
 function caseLinks(record) {
   const intro = record.country
     ? '以下中国条款用于跨国对照。海外实践的服务边界与执行依据见该机构原材料。'
-    : '以下链接对应公开实践中的具体做法。政策效力、适用人群和适用地区见原件。';
+    : '以下条款可用于理解公开实践及核对拟议路径。政策效力和适用范围见原件。';
   const links = record.links.map(link=>{
     const policy = policies.get(link.docId);
     const clause = policy.clauses.find(item=>item.id===link.clauseId);
@@ -546,6 +565,7 @@ function fullPolicy(policy) {
 function comparePage() {
   const records = state.compare.map(id=>cases.get(id)).filter(Boolean);
   const presets = [
+    ...fujianComparisons.values(),
     ['胃癌术后数字营养随访','gd-gastrectomy-mhealth','world-seoul'],
     ['儿童肿瘤营养筛评','hn-zzu-pediatric-aml','world-kkh','world-south-africa'],
     ['安宁疗护从医院到社区','hb-palliative-shared','js-suzhou-palliative-network','world-avl']
@@ -575,6 +595,7 @@ function comparePage() {
     })).join('')+
     row('指标与节点',record=>record.metrics.length ? record.metrics.map(item=>safe(words([item.label,item.value,item.context]))).join('<br>') : '<span class="stage-missing">材料未交代</span>')+
     row('证据边界',record=>safe(record.evidence))+
+    row('对应条款',record=>record.links.length?action('case','查看 '+record.links.length+' 条','data-id="'+attr(record.id)+'" data-tab="links"'):'<span class="stage-missing">暂无关联</span>')+
     row('来源',record=>anchor(record.url,'打开原始材料'))+'</tbody></table></div></section>';
 }
 function methodPage() {
@@ -761,7 +782,12 @@ document.addEventListener('click',async event=>{
     case 'fujian-hospital':
       if (guide.fujian.hospitals.some(hospital=>hospital.id===options.hospital)) {
         state.fujianHospital=options.hospital;
-        renderAndFocus('fujian-hospital-'+options.hospital);
+        if (state.route.view === 'fujian') renderAndFocus('fujian-hospital-'+options.hospital);
+        else {
+          setView('fujian');
+          byId('guide-fujian-hospitals')?.scrollIntoView({block:'start'});
+          byId('fujian-hospital-'+options.hospital)?.focus({preventScroll:true});
+        }
       }
       break;
     case 'share-section': {
@@ -781,7 +807,7 @@ document.addEventListener('click',async event=>{
     case 'clear-policy': state.policy={query:'',region:'',stage:'',kind:''}; render(); break;
     case 'map-region': openCasesForRegion(options.region); break;
     case 'zoom-in': case 'zoom-out': case 'zoom-reset': case 'zoom-europe': setZoom(context,options.action); break;
-    case 'case': revealCase(options.id,{scroll:true}); break;
+    case 'case': revealCase(options.id,{scroll:true,tab:options.tab,region:options.region}); break;
     case 'case-tab':
       state.route.caseTab=options.tab;
       state.route.focusedStep=options.step||'';
@@ -793,7 +819,11 @@ document.addEventListener('click',async event=>{
     case 'policy': showPolicy(options.id,options.clause); break;
     case 'policy-clause': recordRoute({docId:options.id,clauseId:options.clause}); render(); break;
     case 'toggle-compare': toggleCompare(options.id); break;
-    case 'compare-preset': state.compare=options.set.split('|').filter(id=>cases.has(id)).slice(0,3); render(); break;
+    case 'compare-preset':
+      state.compare=options.set.split('|').filter(id=>cases.has(id)).slice(0,3);
+      if (state.route.view==='compare') render();
+      else setView('compare');
+      break;
     case 'source': openSource(options.id,options.clause,control); break;
     case 'close-source': byId('source-dialog').close(); break;
     case 'copy':
@@ -874,7 +904,22 @@ document.addEventListener('keydown',event=>{
 window.addEventListener('resize',()=>{
   if (isScope(state.route.view)) applyMapTransform(state.scopes[state.route.view]);
 });
-window.addEventListener('hashchange',()=>setView(viewFromLink()));
+window.addEventListener('hashchange',()=>{
+  const [view,detail] = readLink();
+  const record = byScope[view]?.find(entry=>entry.id===detail);
+  if (record) {
+    revealCase(record.id,{region:regionOf(record)});
+    return;
+  }
+  const preset = view==='compare' && fujianComparisons.get(detail);
+  if (preset) {
+    state.compare=preset.slice(1);
+    if (state.route.view===view) render();
+    else setView(view);
+    return;
+  }
+  setView(view);
+});
 for (const element of document.querySelectorAll('i[data-icon]')) {
   element.outerHTML=symbol(element.dataset.icon);
 }
