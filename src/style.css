@@ -420,6 +420,26 @@ dialog::backdrop { background:#0e24446a; backdrop-filter:blur(4px); }
 .hospital-check {color:var(--mint);background:var(--mint-fill)}
 @media(max-width:720px){.hospital-sources,.hospital-sources:has(> :nth-child(4)){grid-template-columns:1fr}}
 @media(max-width:620px){.hospital-steps{grid-template-columns:1fr}}
+.benchmark-overview,.benchmark-module {padding:clamp(13px,2vw,21px)}
+.benchmark-overview>p,.benchmark-grid p {font-size:.92rem;line-height:1.65}
+.benchmark-index,.benchmark-quick-links {margin-top:10px}
+.benchmark-index .button {font-weight:700;background:var(--soft)}
+.benchmark-module {margin-top:12px;scroll-margin-top:78px}
+.benchmark-module h3 {font-size:1.12rem}
+.benchmark-module h4 {margin:0 0 5px;font-size:.93rem}
+.benchmark-module h5 {margin:2px 0 4px;font-size:.94rem}
+.benchmark-grid {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px}
+.benchmark-current {padding:11px 12px;border:1px solid var(--line-subtle);border-radius:9px;background:var(--soft)}
+.benchmark-current p+h4 {margin-top:11px}
+.benchmark-references {display:grid;gap:7px;list-style:none;margin:0;padding:0}
+.benchmark-references li {border:1px solid var(--line-subtle);border-radius:9px;padding:9px 10px}
+.benchmark-references .meta {font-size:.76rem;line-height:1.5}
+.benchmark-references .button {margin-top:6px}
+.benchmark-policy {margin-top:11px;padding-top:9px;border-top:1px solid var(--line-subtle)}
+.benchmark-module>h3+.compare-scroll {margin-top:10px}
+.benchmark-table .actions {margin:0}
+.benchmark-table .button {white-space:normal;text-align:left}
+@media(max-width:720px){.benchmark-grid{grid-template-columns:1fr;gap:10px}}
 .flagship-filter[aria-pressed="true"] {background:var(--amber-fill);color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--line))}
 .legend-star {color:var(--amber);font-weight:800}
 .pin-flag {position:absolute;right:calc(100% - 4px);top:-3px;font-size:10px;line-height:1;border-radius:100%;background:#fff4cb;color:#74490f;border:1px solid #c69242;padding:1px;box-shadow:0 1px 2px #3f2c2787}

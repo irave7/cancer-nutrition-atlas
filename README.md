@@ -8,12 +8,12 @@
 | --- | --- |
 | `src/guide.json` | 导览、标志性案例、福建优先措施、试点安排和指标 |
 | `src/atlas-data.json` | 原版案例、政策、条款和地区坐标 |
-| `src/extensions.json` | 福建专题新增的案例与政策 |
+| `src/extensions.json` | 国内外增补案例与地方政策 |
 | `src/app.js`、`src/guide-view.js`、`src/style.css` | 页面交互、导览视图和样式 |
 | `docs/index.html` | 生成的网页，可离线打开，也是 GitHub Pages 的发布入口 |
 
 修改后在项目目录执行 `python3 scripts/build.py`。构建会检查案例、政策、条款和导览之间的索引。浏览器打开 `docs/index.html` 核对改动。将源文件与生成的网页一起提交到 `main`，GitHub Pages 会从 `/docs` 更新同一网址。保留案例的原始来源、公开日期、适用范围和证据限制，编辑时在 `guide.json` 更新资料核验日期。
 
-公开链接可直达首页导览（`#guide`）与福建专题（`#fujian`）。福建专题中的试点时间表和指标为图谱作者建议。机构实践与政策现行范围请核对原文。
+公开链接可直达首页导览（`#guide`）、福建专题（`#fujian`）与三院并排对照（`#benchmarks/all`）。福建专题中的试点时间表和指标为图谱作者建议。机构实践与政策现行范围请核对原文。
 
 中国底图为保留审图号的标准地图，案例标记由网页另行叠加。国际所用底图为 Natural Earth 的世界陆地轮廓。

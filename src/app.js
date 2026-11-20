@@ -7,7 +7,9 @@ const policies = new Map(data.policies.map(policy => [policy.id, policy]));
 const fujianCaseIds = guide.fujian.hospitals.map(hospital=>hospital.case.id);
 const fujianComparisons = new Map([
   ['fujian', ['福建三院营养路径与证据', ...fujianCaseIds]],
-  ['fujian-colorectal', ['结直肠癌围手术期营养', ...fujianCaseIds.filter(id=>cases.get(id).cancers.includes('结直肠癌')), 'henan-crc-surgery']]
+  ['fujian-colorectal', ['结直肠癌围手术期营养', ...fujianCaseIds.filter(id=>cases.get(id).cancers.includes('结直肠癌')), 'henan-crc-surgery']],
+  ['fujian-crc-followup', ['结直肠癌出院接续对照',fujianCaseIds[0],'ln-cmu1-crc-day-surgery-eras','world-italy-piemonte-crc-eras']],
+  ['fujian-cervical-radiotherapy', ['宫颈癌放化疗营养对照',fujianCaseIds[2],'gx-guilin-cervical-nurse-nutrition','world-mexico-cervical-crt']]
 ]);
 const flagships = new Map(guide.flagships.map(entry=>[entry.id,entry]));
 const byScope = {
@@ -28,6 +30,7 @@ const evidenceTypes = {program:'服务或项目公开材料',study:'原始研究
 const nav = {
   guide:['阅读导览','guide'],
   fujian:['福建应用','pin'],
+  benchmarks:['三院案例对照','compare'],
   china:['中国大陆案例','map'],
   policy:['中国政策库','doc'],
   world:['国际参照','globe'],
@@ -103,11 +106,12 @@ function readLink() {
 const [initialView,linkedDetail] = readLink();
 const linkedCase = byScope[initialView]?.find(record=>record.id===linkedDetail);
 const initialCase = linkedCase || (initialView==='world'?initialWorld:initialChina);
+const initialHospital = initialView==='benchmarks' && guide.fujian.hospitals.find(hospital=>hospital.id===linkedDetail);
 const route = {view:initialView,caseId:initialCase?.id || '',caseTab:'overview',focusedStep:'',docId:'clinical-nutrition-2024',clauseId:'priority',panelDoc:'',panelClause:''};
 const state = {
   route, undo:[], redo:[], showSidebar:true, presentation:false,
   compare:initialView==='compare' ? fujianComparisons.get(linkedDetail)?.slice(1) || [] : [], compareMissing:false,
-  fujianTab:'actions',fujianHospital:'cancer',
+  fujianTab:'actions',fujianHospital:initialHospital?.id || 'cancer',benchmarkAll:initialView==='benchmarks' && linkedDetail==='all',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
     world:{mode:'map',selected:initialWorld?.id, zoom:1,x:0,y:0,moreFilters:false}
@@ -210,7 +214,7 @@ function maybeScroll(id) {
   if (matchMedia('(max-width:650px)').matches) byId(id)?.scrollIntoView({block:'start'});
 }
 function renderNav() {
-  const groups = [['开始查看',['guide','fujian']],['图谱',['china','policy','world']],['工作台',['compare','method']]];
+  const groups = [['开始查看',['guide','fujian','benchmarks']],['图谱',['china','policy','world']],['工作台',['compare','method']]];
   byId('nav').innerHTML = groups.map(([title,items])=>'<section class="nav-group"><h2>'+title+'</h2>'+items.map(key=>{
     const [name,icon] = nav[key];
     const count = {china:byScope.china.length,policy:data.policies.length,world:byScope.world.length,compare:state.compare.length}[key];
@@ -228,6 +232,7 @@ function renderNav() {
   const {view,caseId} = state.route;
   let hash = '#'+view;
   if (view==='china' && fujianCaseIds.includes(caseId)) hash += '/'+caseId;
+  if (view==='benchmarks') hash += '/'+(state.benchmarkAll?'all':state.fujianHospital);
   if (view==='compare') {
     const preset = [...fujianComparisons].find(([, [, ...ids]])=>ids.join('|')===state.compare.join('|'));
     if (preset) hash += '/'+preset[0];
@@ -422,7 +427,8 @@ function overview(record) {
     (record.metrics.length ? '<h3>公开指标与节点</h3>'+metricsMarkup(record) : '')+
     '<div class="actions">'+action('case-tab','查看 '+record.links.length+' 条政策'+(record.country?'对照':'关联'),'data-tab="links"','button primary')+
     anchor(record.url,'打开原始材料','button')+action('toggle-compare',state.compare.includes(record.id)?'移出对比':'加入对比','data-id="'+attr(record.id)+'"')+
-    (hospital?action('fujian-hospital','查看拟议医助方案','data-hospital="'+attr(hospital.id)+'"'):'')+'</div>';
+    (hospital?action('fujian-hospital','查看拟议医助方案','data-hospital="'+attr(hospital.id)+'"')+
+      action('fujian-hospital','查看本院参考案例','data-hospital="'+attr(hospital.id)+'" data-view="benchmarks"'):'')+'</div>';
 }
 function pathway(record) {
   const documented = record.steps.map(step=>badge(stepLabels[step],'blue')).join('');
@@ -626,7 +632,7 @@ function render() {
   const catalogScroll = document.querySelector('.policy-list')?.scrollTop;
   const view = state.route.view;
   renderNav();
-  const routes={guide:guidePage,fujian:fujianPage,policy:policyPage,compare:comparePage,method:methodPage};
+  const routes={guide:guidePage,fujian:fujianPage,benchmarks:benchmarkPage,policy:policyPage,compare:comparePage,method:methodPage};
   const page = isScope(view) ? casesPage(view) : routes[view]();
   byId('screen').innerHTML = '<div class="screen-inner">'+page+
     '<footer class="attribution">癌症患者营养全周期管理 · 公开资料核验至 '+safe(date(guide.updateDate))+'</footer></div>';
@@ -779,14 +785,18 @@ document.addEventListener('click',async event=>{
     case 'show-flagships': openChina({featured:true}); break;
     case 'flagship-filter': context.featured=!context.featured; syncFilterResults(); renderAndFocus('case-flagship'); break;
     case 'fujian-tab': state.fujianTab=options.tab; renderAndFocus('fujian-tab-'+options.tab); break;
+    case 'benchmark-all': state.benchmarkAll=true; renderAndFocus('benchmark-hospital-all'); break;
     case 'fujian-hospital':
       if (guide.fujian.hospitals.some(hospital=>hospital.id===options.hospital)) {
+        const view = options.view==='benchmarks' ? 'benchmarks' : 'fujian';
+        const buttonId = (view==='benchmarks'?'benchmark-hospital-':'fujian-hospital-')+options.hospital;
         state.fujianHospital=options.hospital;
-        if (state.route.view === 'fujian') renderAndFocus('fujian-hospital-'+options.hospital);
+        if (view==='benchmarks') state.benchmarkAll=false;
+        if (state.route.view===view) renderAndFocus(buttonId);
         else {
-          setView('fujian');
-          byId('guide-fujian-hospitals')?.scrollIntoView({block:'start'});
-          byId('fujian-hospital-'+options.hospital)?.focus({preventScroll:true});
+          setView(view);
+          if (view==='fujian') byId('guide-fujian-hospitals')?.scrollIntoView({block:'start'});
+          byId(buttonId)?.focus({preventScroll:true});
         }
       }
       break;
@@ -906,6 +916,14 @@ window.addEventListener('resize',()=>{
 });
 window.addEventListener('hashchange',()=>{
   const [view,detail] = readLink();
+  if (view==='benchmarks') {
+    state.benchmarkAll=detail==='all';
+    const hospital = guide.fujian.hospitals.find(entry=>entry.id===detail);
+    if (hospital) state.fujianHospital=hospital.id;
+    if (state.route.view===view) render();
+    else setView(view);
+    return;
+  }
   const record = byScope[view]?.find(entry=>entry.id===detail);
   if (record) {
     revealCase(record.id,{region:regionOf(record)});

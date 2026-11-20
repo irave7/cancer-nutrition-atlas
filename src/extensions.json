@@ -416,6 +416,1376 @@
           "url": "https://www.fjsfy.com/gzb/xwdt/202601/t20260123_10750.htm"
         }
       ]
+    },
+    {
+      "id": "bj-obgyn-nutrition-rounds",
+      "province": "北京",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "北京",
+      "institution": "首都医科大学附属北京妇产医院",
+      "title": "妇科肿瘤病区纳入营养师查房",
+      "date": "2025-08-26",
+      "url": "https://wjw.beijing.gov.cn/xwzx_20031/jcdt/202508/t20250826_4183462.html",
+      "sourceType": "医院供稿及市卫健委公开报道",
+      "sourceTitle": "北京妇产医院营养师走进病房，让医疗服务更有温度",
+      "summary": "膳食科划分营养查房责任区。妇科肿瘤住院患者接受营养风险筛查和评估，发现风险后安排个体化营养支持。",
+      "scope": "院级营养师住院查房，妇科肿瘤病区和其他病区均在服务范围。",
+      "category": "ward",
+      "cancers": [
+        "妇科肿瘤"
+      ],
+      "evidenceType": "program",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "妇科肿瘤住院患者开展营养风险筛查。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "营养师了解实际饮食和需求，对妇科肿瘤患者开展营养评估。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "对有风险的患者给予个体化营养支持及床旁指导。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "按病区设责任区，营养师参加临床大查房。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "2025 年上半年查房",
+          "value": "3,141 人次",
+          "context": "全院公开口径，包含孕产妇等其他住院患者。"
+        }
+      ],
+      "evidence": "医院公开材料说明在用服务及合计服务人次。妇瘤病种分布、宫颈癌专病人数、覆盖率和出院后复评未披露。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照营养专业人员参与临床查房与床旁支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "priority",
+          "reason": "可对照肿瘤患者重点筛查与评估。"
+        },
+        {
+          "docId": "clinical-department-2022",
+          "clauseId": "team",
+          "reason": "可对照营养科与临床团队分工。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "sd-binzhou-cervical-nutrition-tracking",
+      "province": "山东",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "滨州",
+      "institution": "滨州医学院附属医院",
+      "title": "宫颈癌术后放化疗期间按风险安排营养复评",
+      "date": "2022-06",
+      "url": "https://www.hlsjyj.com/uploads/ueditor/file/20220822/1661154198641161.pdf#page=88",
+      "sourceType": "《护理实践与研究》单中心对照研究",
+      "sourceTitle": "全程营养追踪管理对宫颈癌放化疗患者的影响",
+      "summary": "研究把宫颈癌术后放化疗患者的营养评估、分层复评、患者饮食记录和线上反馈放入同一治疗窗口。",
+      "scope": "2019 至 2021 年纳入的宫颈癌术后放化疗患者，两组各 50 例。",
+      "category": "research",
+      "cancers": [
+        "宫颈癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "责任护士在治疗入院早期记录近期进食和营养相关指标，研究使用 PG-SGA。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "营养科、放疗科与肿瘤科协作，结合患者饮食习惯开展床旁指导。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "观察组根据营养状况设定每周、每两周或每月复评，结合体重和饮食日记，由团队处理变化。"
+        },
+        {
+          "stage": "followup",
+          "detail": "护士在不同放化疗间隔通过线上渠道收集饮食和反应，结合定期面谈作反馈。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "研究设立由营养、放疗、肿瘤及护理共同参与的营养管理小组。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "研究纳入",
+          "value": "100 例",
+          "context": "观察和对照各 50 例。"
+        },
+        {
+          "label": "结果复评",
+          "value": "干预后 3 个月",
+          "context": "记录营养相关指标和生活质量。"
+        }
+      ],
+      "evidence": "单中心按组间可比原则分组，观察组同时增加营养追踪和行为支持。实施记录限于研究，不能将结果归于单一措施或理解为当前全院覆盖。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照临床营养团队参与宫颈癌放化疗。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "可对照动态营养评估、干预与效果监测。"
+        },
+        {
+          "docId": "fj-cervical-plan-2023",
+          "clauseId": "treatment-support",
+          "reason": "作为福建宫颈癌诊疗路径增设营养和护理支持的本地条款参照。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "gz-zunyi-crc-chemo-nutrition",
+      "province": "贵州",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "遵义",
+      "institution": "遵义医科大学附属医院",
+      "title": "结直肠癌术后化疗按症状调整营养支持",
+      "date": "2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39789810/",
+      "sourceType": "单中心随机对照研究",
+      "sourceTitle": "Effect of Nutritional Intervention on Chemotherapy Tolerance and Quality of Life in Patients with Colorectal Cancer Undergoing Postoperative Chemotherapy",
+      "summary": "结直肠癌术后化疗患者接受常规膳食咨询或按症状设计的个体营养干预，并在末次化疗复评营养。",
+      "scope": "遵义医科大学附属医院结直肠癌术后化疗患者，研究随机分配 88 例。",
+      "category": "research",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "研究采用 NRS-2002 与 PG-SGA 等反映营养风险和状况。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "干预组围绕患者症状给予个体化营养干预，对照组接受常规膳食咨询。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "在最后一个化疗周期复评营养状态，同时收集治疗耐受和生活质量。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "研究纳入",
+          "value": "88 例",
+          "context": "个体干预 43 例，常规咨询 45 例。"
+        },
+        {
+          "label": "末次化疗营养风险评分",
+          "value": "2.37 vs 3.78",
+          "context": "NRS-2002 组均值，属本试验指标。"
+        }
+      ],
+      "evidence": "研究比较两个研究组，执行范围限于术后化疗患者。院外接续流程和全院常规覆盖未公开。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "可对照术后辅助化疗阶段的全程营养支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照将个体营养服务并入抗肿瘤治疗计划。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "bj-pla9-crc-periop-followup",
+      "province": "北京",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "北京",
+      "institution": "解放军总医院第九医学中心",
+      "title": "结直肠癌围术期营养护理衔接出院电话复评",
+      "date": "2026-08-07",
+      "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1784385/full",
+      "sourceType": "单中心回顾性研究",
+      "sourceTitle": "Association between nutrition-focused evidence-based nursing and post-operative nutritional status in patients undergoing colorectal cancer surgery",
+      "summary": "营养护理流程从术前筛查到住院期间摄入复评，出院时提供个体化书面计划，随后用电话核对体重、摄入及耐受。",
+      "scope": "择期结直肠癌切除成人。比较 2023 年常规护理 106 例与 2024 年营养护理方案 108 例。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "screening",
+        "intervention",
+        "monitoring",
+        "discharge",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "术前使用 NRS-2002 识别营养风险。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "准备术前个体营养护理计划，风险较高者转营养师或医师联合管理。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "住院期间记录进食与胃肠耐受，手术后第 7 天或离院前复评。"
+        },
+        {
+          "stage": "discharge",
+          "detail": "出院时提供书面个体营养计划，适用时包含造口相关饮食指导。"
+        },
+        {
+          "stage": "followup",
+          "detail": "电话复评摄入、体重变化及耐受，发现持续问题时转营养门诊。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "外科护士跟踪营养工作，由营养师和医师负责进一步评估和方案。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "纳入分析",
+          "value": "214 例",
+          "context": "两组对应不同实施年份。"
+        },
+        {
+          "label": "术后高营养风险",
+          "value": "44.4% vs 67.0%",
+          "context": "方案组对早一年常规组，回顾性比较。"
+        }
+      ],
+      "evidence": "单中心前后年份比较，可能存在时间及治疗管理变化等混杂。量化结果是关联，院外电话复评的完成率未单独披露。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "可对照结直肠癌围术期全程支持。"
+        },
+        {
+          "docId": "clinical-department-2022",
+          "clauseId": "records",
+          "reason": "可对照结构化筛评记录与反馈。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "书面出院计划与电话回访提供连续营养服务设计参照。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "world-mexico-cervical-crt",
+      "province": null,
+      "country": "墨西哥",
+      "countryCode": "MX",
+      "coordinates": [
+        -99.16,
+        19.29
+      ],
+      "city": "墨西哥城",
+      "institution": "墨西哥国家癌症研究所",
+      "title": "宫颈癌同步放化疗在五个节点复评营养",
+      "date": "2026-07-13",
+      "url": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1835417/full",
+      "sourceType": "单中心随机临床试验",
+      "sourceTitle": "Benefits of an anti-inflammatory diet compared to a low-residue diet during concurrent chemoradiation therapy for patients with locally advanced cervical cancer",
+      "summary": "局部晚期宫颈癌患者同步放化疗期间，两组由营养师按个人需要提供不同饮食指导，并继续复评至疗程结束 3 个月。",
+      "scope": "墨西哥国家癌症研究所，83 例完成研究。两组均接受营养师支持。",
+      "category": "research",
+      "cancers": [
+        "宫颈癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring",
+        "followup"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "治疗前评估膳食摄入、近期营养状态与消化道症状，包含 PG-SGA。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "营养师解释两组各自的饮食安排，并和参与者用示例菜单核对理解。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "放化疗开始、第 3 个化疗周期与近距离放疗后记录营养和消化道症状。"
+        },
+        {
+          "stage": "followup",
+          "detail": "全疗程结束后 3 个月安排研究复评。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "完成研究",
+          "value": "83 例",
+          "context": "两组分别 41 和 42 例。"
+        },
+        {
+          "label": "营养观察",
+          "value": "5 个时点",
+          "context": "从治疗前到全疗程结束后 3 个月。"
+        }
+      ],
+      "evidence": "两组在最后节点均出现营养恢复。组间完全缓解差异未达到统计显著。材料可比较营养复评节点，常规覆盖和居家服务未披露。",
+      "links": [
+        {
+          "docId": "fj-cervical-plan-2023",
+          "clauseId": "treatment-support",
+          "reason": "用于对照福建宫颈癌诊疗路径同时安排营养配套。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "用于比较放疗期间营养师参与和专业分工。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "用于比较疗程结束后的复评节点。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "world-spain-cabuenes-crc-nutrition",
+      "province": null,
+      "country": "西班牙",
+      "countryCode": "ES",
+      "coordinates": [
+        -5.61,
+        43.52
+      ],
+      "city": "希洪",
+      "institution": "卡武埃涅斯大学医院（Hospital Universitario Cabueñes）",
+      "title": "结直肠癌外科联合营养科在术前完成筛查与干预",
+      "date": "2026-03-13",
+      "url": "https://link.springer.com/article/10.1245/s10434-025-18778-5",
+      "sourceType": "单中心前瞻性观察队列",
+      "sourceTitle": "Targeted Preoperative Nutritional Support within an Enhanced Recovery After Surgery Program for Malnourished Colorectal Cancer Patients",
+      "summary": "医院把术前营养筛查和进一步诊断纳入加速康复路径，营养不良患者接受个体指导和口服营养补充。",
+      "scope": "接受择期结直肠癌切除的成年患者，单中心 187 例。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "monitoring",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "术前用 MUST 等识别营养风险。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "风险患者进一步按 GLIM 标准评估营养不良。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "在手术前给营养不良患者个体膳食指导和口服营养补充。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "研究随后记录早期并发症和住院结局。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "在统一加速康复路径下衔接外科与营养服务。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "纳入队列",
+          "value": "187 例",
+          "context": "其中 42 例筛查阳性并符合研究采用的营养不良标准。"
+        },
+        {
+          "label": "早期术后并发症",
+          "value": "38.1% vs 31.7%",
+          "context": "营养不良组对营养良好组，差异无统计学显著性。"
+        }
+      ],
+      "evidence": "营养不良与营养良好患者的比较属于观察性研究。临床结果不能用于推断营养支持的独立效应，出院长期复评未披露。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "比较如何在结直肠癌术前配置营养支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "比较外科与临床营养在加速康复路径中的分工。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "js-xuzhou-nutrition-obstruction-clinic",
+      "province": "江苏",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "徐州",
+      "institution": "徐州市中心医院",
+      "title": "肿瘤营养筛评与消化道梗阻设置同一专病门诊",
+      "date": "2026-09-01",
+      "url": "https://www.xzch.cn/epaper/html/2026-09/01/content_737558.htm",
+      "sourceType": "徐州市中心医院院报",
+      "sourceTitle": "肿瘤患者的营养问题 科学应对是关键",
+      "summary": "医院胃肠外科开设肿瘤营养与消化道梗阻专病门诊，为有进食困难和营养风险的患者提供筛评、个体支持及梗阻诊疗。",
+      "scope": "医院本部胃肠外科专病门诊，2026 年 4 月起开诊。",
+      "category": "clinic",
+      "cancers": [
+        "多癌种"
+      ],
+      "evidenceType": "program",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "从进食困难、体重下降和消化道梗阻等需求进入专病门诊筛查。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "评估营养状态，适用时参考腹部 CT 的骨骼肌与脂肪信息。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "按治疗阶段、营养状态及梗阻病因制定个体化支持方案。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "开诊时间",
+          "value": "2026 年 4 月",
+          "context": "医院院报记录。"
+        }
+      ],
+      "evidence": "院方公开门诊及工作范围。癌种构成、服务覆盖、出院营养随访和治疗效果未披露。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "capacity",
+          "reason": "可对照有条件的医院设临床营养诊疗入口。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "可对照营养筛查、评估与临床干预。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "zj-cancer-ovarian-periop-quality",
+      "province": "浙江",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "杭州",
+      "institution": "浙江省肿瘤医院",
+      "title": "卵巢癌减瘤术营养质改追踪至首次辅助化疗前",
+      "date": "2026-07-22",
+      "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1865561/full",
+      "sourceType": "单中心非随机前后质改研究",
+      "sourceTitle": "Implementing a perioperative weight management program for ovarian cancer patients undergoing ultra-radical cytoreduction",
+      "summary": "妇瘤围术期质改将入院筛评、营养师介入、术后按风险复评及个体化支持连接起来，并记录至首次辅助化疗前的体重变化。",
+      "scope": "接受超根治性减瘤术的卵巢癌患者，历史对照和质改实施阶段各 80 例。",
+      "category": "surgery",
+      "cancers": [
+        "卵巢癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "monitoring",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "入院使用 NRS-2002 筛查营养风险。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "结合体成分及症状评估，并在术前衔接营养师。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "按摄入和耐受情况制定分层支持。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "对高风险患者在术后 24–48 小时及后续住院期间复评，并尽可能追踪至首次辅助化疗前。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "高风险或病情变化触发妇瘤、护理和营养团队联合处理。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "质改与历史对照",
+          "value": "160 例",
+          "context": "各 80 例。"
+        },
+        {
+          "label": "术后至辅助化疗前平均体重下降",
+          "value": "2.90% vs 5.31%",
+          "context": "实施阶段对历史对照阶段。"
+        }
+      ],
+      "evidence": "单中心历史对照，无法把结果归因于某项营养措施。不同患者的测量时点受辅助化疗安排影响，标准化居家随访未披露。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照妇瘤围术期多学科营养支持。"
+        },
+        {
+          "docId": "quality-2026",
+          "clauseId": "assessment",
+          "reason": "可参照住院患者营养评估的质控口径。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "可对照筛查、支持及监测。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "ln-cmu1-crc-day-surgery-eras",
+      "province": "辽宁",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "沈阳",
+      "institution": "中国医科大学附属第一医院",
+      "title": "直肠癌日间手术从术前筛查接续到院外饮食随访",
+      "date": "2024-09-02",
+      "url": "https://zhjzcjbdzzz.cma-cmc.com.cn/CN/abstract/article/2095-3224/34435",
+      "sourceType": "单中心实施病例系列",
+      "sourceTitle": "直肠癌经自然腔道取标本手术在日间手术中的应用",
+      "summary": "日间手术团队在择期病例中把术前筛评、进食恢复、出院评估和护士远程随访连在一起。同院另有结直肠癌日间围术期营养研究。",
+      "scope": "单中心已完成的日间直肠癌手术 20 例，有明确入组条件及居住距离和照护者要求。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "discharge",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "手术前按日间路径做 NRS-2002 营养风险筛查。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "入院前衔接营养评估，核对支持需求。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "院方按需要安排术前营养支持和术后早期进食。"
+        },
+        {
+          "stage": "discharge",
+          "detail": "达到团队的日间术后评估标准后离院，患者和家属获得阶段性指引。"
+        },
+        {
+          "stage": "followup",
+          "detail": "护士电话或视频跟踪饮食、排便等，发现异常时按专科路径回转。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "胃肠外科、麻醉、日间病房和随访护士协同安排。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "日间病例系列",
+          "value": "20 例",
+          "context": "特定手术方式与选择人群。"
+        },
+        {
+          "label": "材料所列出院联系节点",
+          "value": "24 小时、2 天、7 天及 28 天",
+          "context": "院方讨论所列日间随访节点。"
+        }
+      ],
+      "evidence": "为选择性病例，未报告其全部营养专项完成率。另行发表的 76 例研究和主病例系列采样时间重叠，不能相加。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "可对照结直肠癌围术期全程营养支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照围术期营养工作与外科临床路径衔接。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "可对照家属获知照护安排与离院后回访。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "另行发表的日间围术期营养队列（2025）",
+          "url": "https://www.zgsyz.com/zgsywk/CN/10.19538/j.cjps.issn1005-2208.2025.12.16"
+        }
+      ]
+    },
+    {
+      "id": "gx-guilin-cervical-nurse-nutrition",
+      "province": "广西",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "桂林",
+      "institution": "桂林医科大学第一附属医院",
+      "title": "护士牵头宫颈癌同步放化疗营养筛评和复测",
+      "date": "2025-02",
+      "url": "https://www.glmu.edu.cn/hxyx/hushizhudaodeyingyangganyuzaigongjingaishunbotongbufangliaohuanzhezhongdeyingyong.pdf",
+      "sourceType": "《华夏医学》单中心随机对照研究",
+      "sourceTitle": "护士主导的营养干预在宫颈癌顺铂同步放疗患者中的应用",
+      "summary": "营养风险筛查、专业评估和干预跟随同步放化疗进程。研究由护士牵头，与医生、营养师和药师协作。",
+      "scope": "原桂林医学院附属医院肿瘤内科，2021 年 12 月至 2024 年 5 月纳入 80 例。",
+      "category": "research",
+      "cancers": [
+        "宫颈癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "screening",
+        "assessment",
+        "intervention",
+        "monitoring",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "screening",
+          "detail": "研究在入院 24 小时内进行营养风险筛查。"
+        },
+        {
+          "stage": "assessment",
+          "detail": "按风险开展 PG-SGA 评估并收集饮食记录。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "临床团队按营养状态制定分层支持方案。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "以每周跟踪和放化疗结束时复测记录营养变化。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "由护士追踪任务，医生、营养师和药师参与临床支持。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "研究纳入",
+          "value": "80 例",
+          "context": "分为两组各 40 例。"
+        },
+        {
+          "label": "疗程结束 PG-SGA 评分",
+          "value": "3.78 vs 5.03",
+          "context": "干预组对常规组的平均值，两组评分均较基线上升。"
+        }
+      ],
+      "evidence": "为单中心试验，数据对应治疗期，出院后营养复评及当前常态覆盖未披露。",
+      "links": [
+        {
+          "docId": "clinical-department-2022",
+          "clauseId": "screen24",
+          "reason": "对照入院营养风险筛查时点。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "对照评估、分层干预和持续监测。"
+        },
+        {
+          "docId": "fj-cervical-plan-2023",
+          "clauseId": "treatment-support",
+          "reason": "可参照福建实施方案将营养纳入宫颈癌治疗配套。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "《华夏医学》本期目录",
+          "url": "https://www.glmu.edu.cn/hxyx/info/1112/2505.htm"
+        }
+      ]
+    },
+    {
+      "id": "world-poland-gdansk-crc-chemo",
+      "province": null,
+      "country": "波兰",
+      "countryCode": "PL",
+      "coordinates": [
+        18.63,
+        54.37
+      ],
+      "city": "格但斯克",
+      "institution": "格但斯克医科大学临床营养研究团队",
+      "title": "结直肠癌化疗期间连续 12 周记录营养与生活质量",
+      "date": "2026-01-07",
+      "url": "https://www.mdpi.com/2072-6643/18/2/191",
+      "sourceType": "随机研究的生活质量分析",
+      "sourceTitle": "Quality of Life of Colorectal Cancer Patients Treated with Chemotherapy",
+      "summary": "研究比较化疗期间持续口服营养补充与饮食咨询，并在化疗治疗期间定期记录营养状况、食欲和生活质量。",
+      "scope": "化疗期间 II 至 IV 期结直肠癌患者。2026 年论文为早期随机试验的二次分析。",
+      "category": "research",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "研究记录营养筛评、身体功能、体重指数和食欲。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "支持组接受为期 12 周的口服营养补充，对照组接受饮食咨询。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "每 4 周使用 FAACT 量表记录生活质量，并观察营养与功能状态。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "生活质量完整数据",
+          "value": "59 例",
+          "context": "干预 34 例、对照 25 例，部分分析分母不同。"
+        },
+        {
+          "label": "复评间隔",
+          "value": "每 4 周",
+          "context": "12 周的研究观察窗。"
+        }
+      ],
+      "evidence": "平均生活质量量表分数的组间差异未达到统计显著。生活质量次要分析应结合样本与分析方式理解。院外连续营养服务未披露。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "用作结直肠癌化疗期营养支持对照。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "比较从干预到效果复评的记录方法。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "早期随机试验原文",
+          "url": "https://www.mdpi.com/2072-6643/9/10/1108"
+        }
+      ]
+    },
+    {
+      "id": "world-denmark-randers-colon-prehab",
+      "province": null,
+      "country": "丹麦",
+      "countryCode": "DK",
+      "coordinates": [
+        10.04,
+        56.46
+      ],
+      "city": "兰讷斯",
+      "institution": "兰讷斯区域医院（Regional Hospital Randers）",
+      "title": "从诊断性肠镜接入结肠癌居家术前预康复",
+      "date": "2026-07-25",
+      "url": "https://link.springer.com/article/10.1007/s00384-026-05203-w",
+      "sourceType": "单中心非随机可行性研究",
+      "sourceTitle": "Prehabilitation for colon cancer surgery: a systematic review of quality-of-life outcomes and a feasibility study",
+      "summary": "协调人员在诊断性肠镜后尽早联系结肠癌患者，把约两周的居家营养和运动预康复安排在手术等待期。",
+      "scope": "丹麦兰讷斯区域医院拟行结肠癌手术患者。分析限于论文中的前瞻性可行性研究。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "coordination",
+        "intervention",
+        "monitoring"
+      ],
+      "process": [
+        {
+          "stage": "coordination",
+          "detail": "协调员在诊断性肠镜后 3 天内联系可参加的患者。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "术前居家进行多模式预康复，含营养补充和运动，有特别营养需要时衔接营养师。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "研究记录术前营养执行情况，术后两周收集生活质量。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "入组与完成",
+          "value": "70 例入组，63 例完成",
+          "context": "干预组 32 例。"
+        },
+        {
+          "label": "营养执行度超过 80%",
+          "value": "66%",
+          "context": "分母为干预组，属于可行性指标。"
+        }
+      ],
+      "evidence": "单中心非随机研究。居家营养安排位于手术前。术后复测主要用来观察生活质量，未披露持续术后营养干预。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照患者确诊后至手术前提早对接营养团队。"
+        },
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "对照全程支持中术前等待期能承担的工作。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "开放获取全文",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13683530/"
+        }
+      ]
+    },
+    {
+      "id": "world-italy-piemonte-crc-eras",
+      "province": null,
+      "country": "意大利",
+      "countryCode": "IT",
+      "coordinates": [
+        7.69,
+        45.07
+      ],
+      "city": "都灵（区域协作）",
+      "institution": "皮埃蒙特结直肠外科区域医院网络",
+      "title": "区域结直肠癌路径联动术后进食、出院与早期联系",
+      "date": "2024-02-29",
+      "url": "https://iris.unito.it/retrieve/e0b93630-49b5-42cd-afc0-a5b4073e6a13/363.full.pdf",
+      "sourceType": "区域网络阶梯楔形整群随机研究",
+      "sourceTitle": "Implementation of an enhanced recovery after surgery protocol for colorectal cancer in a regional hospital network supported by audit and feedback",
+      "summary": "区域医院网络在结直肠癌手术中推进共同的加速康复路径，以反馈表核对执行。路径覆盖术后口服进食、出院进食条件和早期联系。",
+      "scope": "意大利皮埃蒙特区域医院网络，适用于参与单位择期结直肠癌手术患者。",
+      "category": "surgery",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "discharge",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "术前用 MUST 或营养师访视评估营养。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "加速康复路径把按临床情况恢复口服进食列为过程项目。"
+        },
+        {
+          "stage": "discharge",
+          "detail": "是否能充分口服进食是列出的出院判定项目之一。"
+        },
+        {
+          "stage": "followup",
+          "detail": "路径在出院后 3 天内安排门诊或电话随访。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "单位分批导入共同路径，开展审计并反馈各参与单位的执行情况。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "分配实施的单位",
+          "value": "29 个医院单元",
+          "context": "单位是整群随机的尺度。"
+        },
+        {
+          "label": "术前营养评估记录",
+          "value": "91.0% vs 41.0%",
+          "context": "路径实施期对照护对照期。"
+        },
+        {
+          "label": "早期随访记录",
+          "value": "47.3% vs 26.8%",
+          "context": "为综合术后随访，非营养专项随访。"
+        }
+      ],
+      "evidence": "研究评价一整套加速康复路径和执行反馈，早期随访属于综合术后照护。营养专项家访和单项营养效果未单独验证。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照跨机构加速康复中营养支持如何纳入标准路径。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "可对照出院交接和早期联系节点。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "world-uk-royal-marsden-giants",
+      "province": null,
+      "country": "英国",
+      "countryCode": "GB",
+      "coordinates": [
+        -0.19,
+        51.49
+      ],
+      "city": "伦敦",
+      "institution": "皇家马斯登医院（The Royal Marsden）",
+      "title": "癌症治疗后胃肠与营养联合门诊衔接基层",
+      "date": null,
+      "url": "https://patientinfolibrary.royalmarsden.nhs.uk/gi-and-nutrition-team-service-giants",
+      "sourceType": "英国 NHS 医院在用门诊公开说明",
+      "sourceTitle": "GI and Nutrition Team service (GIANTs)",
+      "summary": "胃肠与营养团队共同接诊癌症治疗后持续胃肠症状。首诊核对体重与饮食，完成检查后回访制定管理计划并与全科医生衔接。",
+      "scope": "癌症治疗后有持续胃肠道问题的患者，历史队列包含妇科癌及其他癌种。",
+      "category": "clinic",
+      "cancers": [
+        "多癌种"
+      ],
+      "evidenceType": "program",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "首诊评估症状、既往治疗和饮食，适用时请患者记录 7 日饮食。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "由营养师、胃肠医师和专科护士共同提供管理。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "复诊查看检查和症状，按需修订下一阶段方案。"
+        },
+        {
+          "stage": "followup",
+          "detail": "官方手册说明常见需数次复诊，再按情况联系当地服务。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "专职营养师参与，服务与全科医生等接续。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "历史队列完成评估治疗",
+          "value": "325 人",
+          "context": "2013–2014 年，约 21% 为妇科肿瘤。"
+        }
+      ],
+      "evidence": "常态门诊材料支持治疗后接续。历史队列口径独立于现行服务，宫颈癌专病覆盖及肿瘤治疗期间营养覆盖未单列。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "用于对照胃肠与临床营养共同管理治疗后症状。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "用于对照医院专科转全科和地方服务。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "官方患者手册",
+          "url": "https://patientinfolibrary.royalmarsden.nhs.uk/sites/default/files/documents/GI-1284-05.pdf"
+        },
+        {
+          "title": "本院历史前瞻队列原文",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1470211824026800"
+        }
+      ]
+    },
+    {
+      "id": "world-nl-radboud-gyne-prehab",
+      "province": null,
+      "country": "荷兰",
+      "countryCode": "NL",
+      "coordinates": [
+        5.86,
+        51.82
+      ],
+      "city": "奈梅亨",
+      "institution": "拉德堡德大学医学中心（Radboudumc）",
+      "title": "妇科肿瘤术前预康复纳入常规手术准备",
+      "date": "2026-08-27",
+      "url": "https://www.radboudumc.nl/en/news-items/2026/lifestyle-program-before-surgery-improves-recovery-of-gynecological-cancer",
+      "sourceType": "医院公开服务进展与实施研究",
+      "sourceTitle": "Lifestyle program before surgery improves recovery of gynecological cancer",
+      "summary": "医院将约三周的妇科肿瘤预康复纳入标准术前照护，营养师提供评估与饮食指导，并与运动等准备同时实施。",
+      "scope": "院方列出的卵巢癌、子宫癌和外阴癌手术。补充研究报告妇瘤外科的实施过程。",
+      "category": "surgery",
+      "cancers": [
+        "妇科肿瘤"
+      ],
+      "evidenceType": "program",
+      "steps": [
+        "assessment",
+        "intervention",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "实施研究在术前记录患者营养风险和进食情况。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "营养师在术前与患者讨论蛋白质摄入等饮食安排，结合其他预康复工作。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "由妇科、营养、运动等团队在手术前协作。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "术前项目时长",
+          "value": "约 3 周",
+          "context": "院方服务介绍口径。"
+        }
+      ],
+      "evidence": "实施资料涵盖多个同时进行的预康复项目。放化疗是该机构拟拓展场景，现有资料未披露放化疗或离院后营养路径。",
+      "links": [
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "用于对照妇瘤术前多专业协作。"
+        },
+        {
+          "docId": "national-nutrition-plan",
+          "clauseId": "pathway",
+          "reason": "用于对照手术前的营养评估与干预。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "预康复实施研究原文",
+          "url": "https://www.mdpi.com/2072-6694/16/5/1013"
+        }
+      ]
+    },
+    {
+      "id": "world-au-brisbane-gyne-rt-dietitian",
+      "province": null,
+      "country": "澳大利亚",
+      "countryCode": "AU",
+      "coordinates": [
+        153.03,
+        -27.45
+      ],
+      "city": "布里斯班",
+      "institution": "皇家布里斯班妇女医院（RBWH）",
+      "title": "妇科癌盆腔放疗期每周营养咨询与摄入复查",
+      "date": "2024-11-25",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jhn.13402",
+      "sourceType": "单中心单臂可行性研究",
+      "sourceTitle": "Dietary counselling to increase soluble fibre in patients with gynaecological cancers undergoing pelvic radiotherapy: A feasibility study",
+      "summary": "盆腔放疗期由营养团队每周咨询并追踪摄入，部分参加者同时接受化疗。研究关注患者对饮食安排的可接受性。",
+      "scope": "9 名参加者，宫颈癌 3 名，其余为子宫或阴道癌患者。",
+      "category": "research",
+      "cancers": [
+        "宫颈癌",
+        "妇科肿瘤"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "assessment",
+        "intervention",
+        "monitoring"
+      ],
+      "process": [
+        {
+          "stage": "assessment",
+          "detail": "由营养团队记录治疗前饮食摄入。"
+        },
+        {
+          "stage": "intervention",
+          "detail": "在 5 至 6 周放疗期间，每周开展营养咨询。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "监测饮食摄入和治疗期间的胃肠道情况。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "入组",
+          "value": "9 人",
+          "context": "14 人受邀，其中 4 名入组后退出。"
+        }
+      ],
+      "evidence": "小样本单臂研究支持操作可行性观察。研究未验证常规疗效或院外连续服务，入组与完成数量需分别解读。",
+      "links": [
+        {
+          "docId": "fj-cervical-plan-2023",
+          "clauseId": "treatment-support",
+          "reason": "比较放疗期营养咨询在宫颈癌诊疗路径中的衔接。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "比较放疗团队与营养师协作。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "莫纳什大学研究记录",
+          "url": "https://research.monash.edu/en/publications/dietary-counselling-to-increase-soluble-fibre-in-patients-with-gy/"
+        }
+      ]
+    },
+    {
+      "id": "jl-cancer-rectal-mdt-followup",
+      "province": "吉林",
+      "country": null,
+      "countryCode": null,
+      "coordinates": null,
+      "city": "长春",
+      "institution": "吉林省肿瘤医院",
+      "title": "直肠癌多学科门诊接入营养指导与术后随访",
+      "date": "2026-06-17",
+      "url": "https://www.jlszlyy.com/newszx/28950",
+      "sourceType": "医院专病门诊公开说明",
+      "sourceTitle": "吉林省肿瘤医院直肠癌保肛 MDT 专病门诊开诊",
+      "summary": "医院正式开设直肠癌保肛多学科门诊，将营养指导、术后康复管理和长期随访纳入专病就诊路径。",
+      "scope": "面向直肠癌患者的保肛专病门诊。实际治疗和转介按患者病情确定。",
+      "category": "clinic",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "program",
+      "steps": [
+        "intervention",
+        "followup",
+        "coordination"
+      ],
+      "process": [
+        {
+          "stage": "intervention",
+          "detail": "专病团队将营养指导列为综合支持内容。"
+        },
+        {
+          "stage": "followup",
+          "detail": "院方将术后康复与长期随访列入门诊服务。"
+        },
+        {
+          "stage": "coordination",
+          "detail": "整合外科、肿瘤内科、放疗科等专业讨论治疗安排。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "开诊信息",
+          "value": "2026 年 6 月",
+          "context": "医院官网公开。"
+        }
+      ],
+      "evidence": "服务入口与列出的服务有公开记录。院方未披露营养筛查工具、复评频率、实际覆盖率或营养结局。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "可对照直肠癌全程综合治疗中的营养支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "integrated",
+          "reason": "可对照多学科团队中的临床营养服务。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "可对照治疗后随访与持续支持。"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "world-turkey-mersin-crc-home-nutrition",
+      "province": null,
+      "country": "土耳其",
+      "countryCode": "TR",
+      "coordinates": [
+        34.64,
+        36.81
+      ],
+      "city": "梅尔辛",
+      "institution": "梅尔辛大学医学院团队",
+      "title": "结直肠癌手术后居家口服营养支持与复评",
+      "date": "2022-07-19",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35852357/",
+      "sourceType": "单中心观察性研究",
+      "sourceTitle": "Does Home Oral Nutritional Support Improve Nutritional Status and Quality of Life following Colorectal Cancer Surgery?",
+      "summary": "研究观察结直肠癌择期手术患者开始居家口服营养支持后的摄入、体重、功能表现及就医情况。",
+      "scope": "在梅尔辛大学医学院团队的择期结直肠癌手术人群中，144 例接受居家营养支持的患者纳入分析。",
+      "category": "home",
+      "cancers": [
+        "结直肠癌"
+      ],
+      "evidenceType": "study",
+      "steps": [
+        "intervention",
+        "monitoring",
+        "followup"
+      ],
+      "process": [
+        {
+          "stage": "intervention",
+          "detail": "手术后在院外继续口服营养支持。"
+        },
+        {
+          "stage": "monitoring",
+          "detail": "研究记录体重、能量和蛋白摄入、功能和生活质量。"
+        },
+        {
+          "stage": "followup",
+          "detail": "对居家支持人群跟踪并发症和再入院。"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "实际纳入分析",
+          "value": "144 例",
+          "context": "为接受居家营养支持且进入分析的患者。"
+        }
+      ],
+      "evidence": "公开摘要描述接受营养支持的观察队列。未建立未接受支持的并行对照，也未披露本院现行服务覆盖。",
+      "links": [
+        {
+          "docId": "colorectal-guide-2025",
+          "clauseId": "support",
+          "reason": "用于对照结直肠癌手术后支持。"
+        },
+        {
+          "docId": "clinical-nutrition-2024",
+          "clauseId": "continuity",
+          "reason": "用于对照居家支持期间的复评和记录。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "期刊正式论文链接",
+          "url": "https://doi.org/10.1080/01635581.2022.2096911"
+        }
+      ]
     }
   ],
   "policies": [

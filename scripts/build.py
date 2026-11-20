@@ -43,11 +43,19 @@ def verify_guide(item):
     if kind == 'source':
         assert item['url'].startswith('https://'), item
     if kind == 'view':
-        assert item['id'] in {'guide','fujian','china','world','policy','compare','method'}, item
+        assert item['id'] in {'guide','fujian','benchmarks','china','world','policy','compare','method'}, item
     for child in item.values():
         verify_guide(child)
 
 verify_guide(guide)
+benchmarks = guide['benchmarks']['hospitals']
+benchmark_stages = list(guide['benchmarks']['stages'])
+assert benchmark_stages == ['entry', 'surgery', 'therapy', 'discharge', 'followup']
+assert set(benchmarks) == {hospital['id'] for hospital in guide['fujian']['hospitals']}
+for hospital, comparison in benchmarks.items():
+    modules = comparison['modules']
+    assert [module['id'] for module in modules] == benchmark_stages, hospital
+    assert all(1 <= len(module['references']) <= 2 and module['policy'] for module in modules), hospital
 assert len(guide["flagships"]) == len({ref["id"] for ref in guide["flagships"]})
 assert all(ref["id"] in case_ids for ref in guide["flagships"])
 content.update(

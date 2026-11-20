@@ -85,6 +85,7 @@ function fujianPage() {
   const [,renderTab]=tabs[state.fujianTab] || tabs.actions;
   return head(content.title,content.subtitle,[],'福建 · 院内医助协作')+guideThesis('从门诊和病房开始',content.thesis,
     action('guide-section','查看三院方案','data-section="fujian-hospitals"','button primary')+
+    action('view','三院参考案例','data-view="benchmarks"')+
     action('compare-preset',symbol('compare')+'并排对比三院','data-set="'+attr(fujianCaseIds.join('|'))+'"')+
     action('fujian-map',symbol('map')+'查看福建案例')+shareButton('fujian'))+
     fujianHospitals(content.hospitals)+
@@ -93,4 +94,57 @@ function fujianPage() {
     '<section class="guide-block" id="guide-fujian-plan" aria-label="公司项目方案"><div class="guide-section-head"><h2>公司项目方案</h2><div class="segmented fujian-segments" aria-label="公司项目方案视图">'+Object.entries(tabs).map(([id,[label]])=>
       action('fujian-tab',safe(label),'id="fujian-tab-'+id+'" data-tab="'+id+'" aria-controls="fujian-content" aria-pressed="'+press(id===state.fujianTab)+'"','')).join('')+'</div></div>'+
     '<div id="fujian-content">'+renderTab()+'</div></section><p class="guide-footnote">'+safe(content.guardrail)+'</p>';
+}
+function benchmarkHospitalModules(active,comparison,fields) {
+  return comparison.modules.map(module=>{
+    const compareIds = [active.case.id,...module.references.map(ref=>ref.id)].join('|');
+    return '<section class="pane benchmark-module" id="guide-benchmark-'+attr(module.id)+'" aria-label="'+attr(module.title)+'">'+
+      '<div class="guide-section-head"><h3>'+safe(module.title)+'</h3>'+
+      action('compare-preset',symbol('compare')+'并排对比本模块','data-set="'+attr(compareIds)+'"')+'</div>'+
+      '<div class="benchmark-grid"><div class="benchmark-current">'+fields.map(([field,label])=>
+        '<h4>'+safe(label)+'</h4><p>'+safe(module[field])+'</p>').join('')+'</div>'+
+      '<div><h4>参考案例的做法与证据</h4><ul class="benchmark-references">'+module.references.map(ref=>{
+        const record = cases.get(ref.id);
+        return '<li><p class="meta">'+safe(words([regionOf(record),record.institution,evidenceTypes[record.evidenceType]]))+'</p>'+
+          '<h5>'+safe(ref.label)+'</h5><p>'+safe(ref.detail)+'</p>'+
+          guideReference({...ref,label:'查看案例与原文'})+'</li>';
+      }).join('')+'</ul></div></div>'+
+      '<div class="benchmark-policy"><h4>对应政策细则</h4>'+guideReferences(module.policy)+'</div></section>';
+  }).join('');
+}
+function benchmarkJointModules(hospitals,content,fields) {
+  return Object.entries(content.stages).map(([id,title],index)=>{
+    const modules = hospitals.map(hospital=>content.hospitals[hospital.id].modules[index]);
+    const row = (label,cell)=>'<tr><th scope="row">'+safe(label)+'</th>'+modules.map(module=>'<td>'+cell(module)+'</td>').join('')+'</tr>';
+    return '<section class="pane benchmark-module" id="guide-benchmark-'+attr(id)+'" aria-label="'+attr(title)+'">'+
+      '<h3>'+safe(title)+'</h3><div class="compare-scroll" tabindex="0" aria-label="'+attr(title)+'的三院对比表，可横向滚动">'+
+      '<table class="compare-table benchmark-table"><thead><tr><th scope="col">对照维度</th>'+hospitals.map(hospital=>
+        '<th scope="col">'+safe(hospital.short)+'</th>').join('')+'</tr></thead><tbody>'+
+      fields.map(([field,label])=>row(label,module=>safe(module[field]))).join('')+
+      row('参考案例',module=>guideReferences(module.references))+
+      row('对应政策细则',module=>guideReferences(module.policy))+'</tbody></table></div></section>';
+  }).join('');
+}
+function benchmarkPage() {
+  const content = guide.benchmarks;
+  const fields = [['baseline','本院公开基础'],['apply','拟接入的医助工作'],['measure','试点验收']];
+  const hospitals = guide.fujian.hospitals;
+  const active = hospitals.find(hospital=>hospital.id===state.fujianHospital) || hospitals[0];
+  const comparison = content.hospitals[active.id];
+  const all = state.benchmarkAll;
+  const selector = '<div class="segmented fujian-segments" aria-label="选择对照医院">'+hospitals.map(hospital=>
+    action('fujian-hospital',safe(hospital.short),'id="benchmark-hospital-'+attr(hospital.id)+'" data-hospital="'+attr(hospital.id)+
+      '" data-view="benchmarks" aria-controls="benchmark-panel" aria-pressed="'+press(!all && hospital===active)+'"','')).join('')+
+    action('benchmark-all','三院并排','id="benchmark-hospital-all" aria-controls="benchmark-panel" aria-pressed="'+press(all)+'"','')+'</div>';
+  const moduleIndex = '<nav class="actions benchmark-index" aria-label="按诊疗阶段查看">'+Object.entries(content.stages).map(([id,title])=>
+    action('guide-section',safe(title),'data-section="benchmark-'+attr(id)+'"')).join('')+'</nav>';
+  const heading = all ? '<h3>三院分阶段对照</h3>' : '<h3>'+safe(active.name)+'</h3>'+badge(active.scenario,'blue');
+  const casesLink = all ? action('compare-preset','打开三院证据对比表','data-set="'+attr(fujianCaseIds.join('|'))+'"') :
+    guideReference({...active.case,region:'福建',label:'查看本院独立案例'});
+  return head(content.title,content.subtitle,[],'福建 · 参考案例')+
+    '<section class="guide-block" aria-label="医院与对照索引"><div class="guide-section-head"><h2>选择对照视图</h2>'+selector+'</div>'+
+    '<div id="benchmark-panel" class="pane benchmark-overview"><div class="hospital-heading">'+heading+'</div>'+
+    '<p>'+safe(all?content.jointIntro:comparison.intro)+'</p>'+moduleIndex+'<div class="actions benchmark-quick-links">'+casesLink+
+    action('view','返回福建试点方案','data-view="fujian"')+shareButton('benchmarks/'+(all?'all':active.id))+'</div></div></section>'+
+    (all?benchmarkJointModules(hospitals,content,fields):benchmarkHospitalModules(active,comparison,fields));
 }
