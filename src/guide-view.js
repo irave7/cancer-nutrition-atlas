@@ -40,9 +40,8 @@ function guidePage() {
 }
 function fujianActions(content) {
   return '<div class="guide-cards action-cards">'+content.actions.map(entry=>'<article class="pane guide-card">'+badge(entry.layer,'blue')+
-    '<h3>'+safe(entry.title)+'</h3><dl><dt>福建可先做</dt><dd>'+safe(entry.local)+'</dd><dt>从案例借鉴</dt><dd>'+safe(entry.transfer)+
-    '</dd><dt>落地前核对</dt><dd>'+safe(entry.limit)+'</dd></dl>'+guideReferences(entry.refs)+'</article>').join('')+'</div>'+
-    '<article class="pane guide-card cost-note"><h3>'+safe(content.cost.title)+'</h3><p>'+safe(content.cost.detail)+'</p>'+guideReferences(content.cost.refs)+'</article>';
+    '<h3>'+safe(entry.title)+'</h3><dl><dt>公司交付</dt><dd>'+safe(entry.local)+'</dd><dt>从案例借鉴</dt><dd>'+safe(entry.transfer)+
+    '</dd><dt>合作边界</dt><dd>'+safe(entry.limit)+'</dd></dl>'+guideReferences(entry.refs)+'</article>').join('')+'</div>';
 }
 function fujianPilot(content) {
   return '<ol class="pane guide-cycle">'+content.pilot.map(entry=>'<li>'+badge(entry.label,'blue')+'<h3>'+safe(entry.title)+'</h3><p>'+safe(entry.detail)+'</p></li>').join('')+'</ol>';
@@ -51,15 +50,27 @@ function fujianMetrics(content) {
   return '<div class="guide-cards action-cards">'+content.metrics.map(entry=>'<article class="pane guide-card"><h3>'+safe(entry.name)+'</h3><p class="metric-definition">'+
     safe(entry.definition)+'</p><p class="meta">'+safe(entry.note)+'</p></article>').join('')+'</div>';
 }
+function fujianCards(entries,layout='') {
+  return '<div class="guide-cards '+layout+'">'+entries.map(entry=>
+    '<article class="pane guide-card"><h3>'+safe(entry.title)+'</h3><p>'+safe(entry.detail)+'</p>'+guideReferences(entry.refs)+'</article>').join('')+'</div>';
+}
 function fujianPage() {
   const content=guide.fujian;
-  const tabs={actions:'优先措施',pilot:'90 天试点',metrics:'看哪些指标'};
-  const body=state.fujianTab==='pilot'?fujianPilot(content):state.fujianTab==='metrics'?fujianMetrics(content):fujianActions(content);
-  return head(content.title,content.subtitle,[],'地方应用')+guideThesis('建议的起点',content.thesis,
-    action('fujian-map',symbol('map')+'查看福建案例','','button primary')+shareButton('fujian'))+
-    '<section class="guide-block" aria-label="福建已有基础"><div class="guide-section-head"><h2>福建已有基础</h2></div><div class="guide-cards">'+
-    content.foundation.map(entry=>'<article class="pane guide-card"><h3>'+safe(entry.title)+'</h3><p>'+safe(entry.detail)+'</p>'+guideReferences(entry.refs)+'</article>').join('')+'</div></section>'+
-    '<section class="guide-block" aria-label="福建落地方案"><div class="guide-section-head"><h2>福建落地方案</h2><div class="segmented" aria-label="落地方案视图">'+Object.entries(tabs).map(([id,label])=>
+  const tabs={
+    actions:['服务交付',()=>fujianActions(content)],
+    pilot:['90 天试点',()=>fujianPilot(content)],
+    metrics:['验收指标',()=>fujianMetrics(content)],
+    commercial:['合作与预算',()=>fujianCards(content.commercial,'action-cards')]
+  };
+  const [,renderTab]=tabs[state.fujianTab] || tabs.actions;
+  return head(content.title,content.subtitle,[],'福建 · 公司项目视角')+guideThesis('先从出院交接切入',content.thesis,
+    action('guide-section','查看项目方案','data-section="fujian-plan"','button primary')+
+    action('fujian-map',symbol('map')+'查看福建案例')+shareButton('fujian'))+
+    '<section class="guide-block" aria-label="合作分工"><div class="guide-section-head"><h2>谁负责什么</h2></div>'+
+    fujianCards(content.roles)+'</section>'+
+    '<section class="guide-block" aria-label="福建合作入口"><div class="guide-section-head"><h2>福建合作从哪里谈起</h2></div>'+
+    fujianCards(content.foundation)+'</section>'+
+    '<section class="guide-block" id="guide-fujian-plan" aria-label="公司项目方案"><div class="guide-section-head"><h2>公司项目方案</h2><div class="segmented fujian-segments" aria-label="公司项目方案视图">'+Object.entries(tabs).map(([id,[label]])=>
       action('fujian-tab',safe(label),'id="fujian-tab-'+id+'" data-tab="'+id+'" aria-controls="fujian-content" aria-pressed="'+press(id===state.fujianTab)+'"','')).join('')+'</div></div>'+
-    '<div id="fujian-content">'+body+'</div></section><p class="guide-footnote">'+safe(content.guardrail)+'</p>';
+    '<div id="fujian-content">'+renderTab()+'</div></section><p class="guide-footnote">'+safe(content.guardrail)+'</p>';
 }

@@ -397,7 +397,7 @@ dialog::backdrop { background:#0e24446a; backdrop-filter:blur(4px); }
 .guide-card dt {font-size:.8rem;font-weight:700;color:var(--accent);margin:6px 0 2px}
 .guide-card dd {margin:0}
 .guide-card .metric-definition {color:var(--active);font-weight:650}
-.cost-note {margin-top:9px}
+.fujian-segments {flex-wrap:wrap;max-width:100%}
 .flagship-filter[aria-pressed="true"] {background:var(--amber-fill);color:var(--amber);border-color:color-mix(in srgb,var(--amber) 45%,var(--line))}
 .legend-star {color:var(--amber);font-weight:800}
 .pin-flag {position:absolute;right:calc(100% - 4px);top:-3px;font-size:10px;line-height:1;border-radius:100%;background:#fff4cb;color:#74490f;border:1px solid #c69242;padding:1px;box-shadow:0 1px 2px #3f2c2787}
