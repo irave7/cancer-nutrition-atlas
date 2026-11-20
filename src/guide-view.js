@@ -23,8 +23,32 @@ function homeRow(ref,title,summary,meta) {
     '<small>'+safe(meta)+'</small></span>'+symbol('right');
   return '<li>'+action(ref.type,content,target,'home-row')+'</li>';
 }
-function guidePage() {
-  const content = guide.overview;
+function homeSummaryCard(title,icon,content,links) {
+  return '<article class="pane executive-card"><h2>'+symbol(icon)+safe(title)+'</h2><h3>'+safe(content.headline)+'</h3>'+
+    '<p>'+safe(content.detail)+'</p>'+links+'</article>';
+}
+function homeExecutive(content) {
+  const overview = content.executive;
+  const hospitals = overview.hospitals.map(entry=>{
+    const hospital = guide.fujian.hospitals.find(item=>item.id===entry.id);
+    const label = '<span><strong>'+safe(hospital.short)+'</strong><small>'+safe(entry.disease)+'</small></span>'+
+      '<span class="executive-hospital-focus">'+safe(entry.focus)+'</span><span class="executive-hospital-basis">'+safe(entry.basis)+'</span>'+symbol('right');
+    return '<li>'+action('fujian-hospital',label,'data-hospital="'+attr(hospital.id)+'"','executive-hospital')+'</li>';
+  }).join('');
+  return '<section class="executive-hero" aria-labelledby="executive-title"><div class="executive-lead">'+
+    '<h1 id="executive-title">'+safe(content.title)+'</h1><p class="executive-takeaway">'+safe(overview.takeaway)+'</p>'+
+    '<p class="executive-scope">'+safe(content.subtitle)+'</p><div class="actions executive-actions">'+
+    action('view','查看福建试点','data-view="fujian"','button executive-primary')+
+    action('benchmark-all','三院并排对照','','button executive-secondary')+'</div></div>'+
+    '<div class="executive-pilot"><span>建议试点周期</span><strong>'+safe(overview.pilotDuration)+'</strong></div></section>'+
+    '<section class="executive-cards" aria-label="政策、标杆与试点验收">'+
+    homeSummaryCard('政策依据','doc',overview.policy,guideReferences(overview.policy.refs))+
+    homeSummaryCard('国内标杆','star',overview.benchmark,guideReferences(overview.benchmark.refs))+
+    homeSummaryCard('试点怎么验收','check',overview.acceptance,'<div class="actions">'+action('fujian-tab','查看验收指标','data-tab="metrics"')+'</div>')+'</section>'+
+    '<section class="pane executive-hospitals" aria-labelledby="executive-hospitals-title"><h2 id="executive-hospitals-title">福建三院拟从哪里切入</h2>'+
+    '<ul>'+hospitals+'</ul></section>';
+}
+function homePathway(content) {
   const active = content.stages.find(stage=>stage.id===state.homeStage) || content.stages[0];
   const nodes = content.stages.map(stage=>{
     const caption = '<span class="home-flow-icon">'+symbol(stage.icon)+'</span><span class="home-node-text"><strong>'+safe(stage.title)+'</strong><small>'+safe(stage.cue)+'</small></span>';
@@ -36,19 +60,21 @@ function guidePage() {
     const {home} = flagships.get(ref.id);
     return homeRow(ref,home.name,home.summary,home.evidence);
   }).join('');
-  return '<div class="home-head">'+head(content.title,content.subtitle)+
-    '<nav class="actions home-shortcuts" aria-label="常用入口">'+
-    action('view',symbol('pin')+'福建应用','data-view="fujian"')+
-    action('view',symbol('compare')+'三院案例对照','data-view="benchmarks"')+shareButton('guide')+'</nav></div>'+
-    '<section class="pane home-flow" aria-label="营养照护流程图"><ol class="home-flow-track">'+nodes+'</ol></section>'+
+  return '<section class="pane home-flow" aria-label="营养照护流程图"><ol class="home-flow-track">'+nodes+'</ol></section>'+
     '<section class="pane home-stage-panel" id="home-stage-panel" aria-labelledby="home-stage-title">'+
     '<header class="home-stage-header"><h2 id="home-stage-title">'+safe(active.title)+'</h2><p>'+safe(active.detail)+'</p></header>'+
     '<div class="home-stage-evidence"><div class="home-evidence home-policies"><h3>'+symbol('doc')+'对应政策</h3><ul>'+policyRows+'</ul></div>'+
     '<div class="home-evidence home-cases"><h3>'+symbol('star')+'国内标杆</h3><ul>'+caseRows+'</ul></div></div></section>'+
     '<nav class="actions home-library" aria-label="查看完整资料">'+
-    action('view','查看政策库','data-view="policy"')+action('show-flagships','在地图查看标杆')+'</nav>'+
+    action('view','查看政策库','data-view="policy"')+action('show-flagships','在地图查看标杆')+shareButton('guide')+'</nav>'+
     '<details class="home-palliative"><summary>'+safe(content.palliative.label)+'</summary><p>'+safe(content.palliative.summary)+'</p>'+
     guideReferences(content.palliative.refs)+'</details>';
+}
+function guidePage() {
+  const content = guide.overview;
+  return homeExecutive(content)+'<details class="pane executive-evidence" id="home-evidence"'+
+    (state.homeEvidenceOpen?' open':'')+'><summary>按照护阶段查政策与案例</summary>'+
+    '<div class="executive-pathway">'+homePathway(content)+'</div></details>';
 }
 function fujianActions(content) {
   return '<div class="guide-cards action-cards">'+content.actions.map(entry=>'<article class="pane guide-card">'+badge(entry.layer,'blue')+

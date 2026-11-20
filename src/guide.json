@@ -1,8 +1,8 @@
 {
   "updateDate": "2026-11-20",
   "overview": {
-    "title": "癌症营养照护流程",
-    "subtitle": "点选一个环节，查看对应政策条款和国内标杆案例。",
+    "title": "癌症营养全周期管理",
+    "subtitle": "建议依托福建三院现有的医助协作，以结直肠癌和宫颈癌为切入病种。",
     "stages": [
       {
         "id": "entry",
@@ -127,6 +127,68 @@
           "type": "case",
           "id": "fj-fz-changle-palliative",
           "label": "福州长乐入户个案"
+        }
+      ]
+    },
+    "executive": {
+      "takeaway": "从院内营养筛查开始，跟进到出院后首次复评。",
+      "pilotDuration": "90 天",
+      "policy": {
+        "headline": "入院后 24 小时内完成首次营养筛查",
+        "detail": "国家癌症防治行动也把营养支持纳入规范诊疗。",
+        "refs": [
+          {
+            "type": "policy",
+            "id": "clinical-department-2022",
+            "clause": "screen24",
+            "label": "住院筛查条款"
+          },
+          {
+            "type": "policy",
+            "id": "national-cancer-plan",
+            "clause": "support",
+            "label": "癌症防治条款"
+          }
+        ]
+      },
+      "benchmark": {
+        "headline": "邵逸夫筛查率 64.31% → 100%",
+        "detail": "2021—2024 年院方研究的院级过程指标。天津另有门诊、日间、住院和居家接续案例。",
+        "refs": [
+          {
+            "type": "case",
+            "id": "zhejiang-quality",
+            "label": "邵逸夫质控"
+          },
+          {
+            "type": "case",
+            "id": "tianjin-one-stop",
+            "label": "天津全程服务"
+          }
+        ]
+      },
+      "acceptance": {
+        "headline": "先看交接签收和按期复评",
+        "detail": "院方负责营养评估和方案，医助跟进转介、交接及复评安排。"
+      },
+      "hospitals": [
+        {
+          "id": "cancer",
+          "disease": "结直肠癌",
+          "focus": "衔接术前营养会诊和术后复评",
+          "basis": "已有入院评估和术后监测的研究记录。"
+        },
+        {
+          "id": "union",
+          "disease": "结直肠癌",
+          "focus": "验证择日住院及转入手术病区的营养交接",
+          "basis": "公开资料记录了择日住院和放化疗后手术。"
+        },
+        {
+          "id": "women",
+          "disease": "宫颈癌",
+          "focus": "确认妇瘤患者的营养接单团队",
+          "basis": "已有手术、放化疗和专科随访的公开案例。"
         }
       ]
     }

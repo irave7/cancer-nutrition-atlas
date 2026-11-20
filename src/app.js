@@ -111,7 +111,7 @@ const route = {view:initialView,caseId:initialCase?.id || '',caseTab:'overview',
 const state = {
   route, undo:[], redo:[], showSidebar:true, presentation:false,
   compare:initialView==='compare' ? fujianComparisons.get(linkedDetail)?.slice(1) || [] : [], compareMissing:false,
-  homeStage:guide.overview.stages[0].id,
+  homeStage:guide.overview.stages[0].id, homeEvidenceOpen:false,
   fujianTab:'actions',fujianHospital:initialHospital?.id || 'cancer',benchmarkAll:initialView==='benchmarks' && linkedDetail==='all',
   scopes: {
     china:{mode:'map',selected:initialChina?.id, zoom:1,x:0,y:0,moreFilters:false},
@@ -774,6 +774,9 @@ byId('global-query').addEventListener('keydown',event=>{
   byId('search-results').querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'});
 });
 
+document.addEventListener('toggle',event=>{
+  if (event.target.id==='home-evidence') state.homeEvidenceOpen=event.target.open;
+},true);
 document.addEventListener('click',async event=>{
   const control = event.target.closest('[data-action]');
   if (!control) return;
@@ -791,8 +794,19 @@ document.addEventListener('click',async event=>{
     case 'fujian-map': openChina({region:'福建'}); break;
     case 'show-flagships': openChina({featured:true}); break;
     case 'flagship-filter': context.featured=!context.featured; syncFilterResults(); renderAndFocus('case-flagship'); break;
-    case 'fujian-tab': state.fujianTab=options.tab; renderAndFocus('fujian-tab-'+options.tab); break;
-    case 'benchmark-all': state.benchmarkAll=true; renderAndFocus('benchmark-hospital-all'); break;
+    case 'fujian-tab':
+      state.fujianTab=options.tab;
+      if (state.route.view==='fujian') renderAndFocus('fujian-tab-'+options.tab);
+      else {
+        setView('fujian');
+        byId('guide-fujian-plan')?.scrollIntoView({block:'start'});
+      }
+      break;
+    case 'benchmark-all':
+      state.benchmarkAll=true;
+      if (state.route.view==='benchmarks') renderAndFocus('benchmark-hospital-all');
+      else setView('benchmarks');
+      break;
     case 'fujian-hospital':
       if (guide.fujian.hospitals.some(hospital=>hospital.id===options.hospital)) {
         const view = options.view==='benchmarks' ? 'benchmarks' : 'fujian';
