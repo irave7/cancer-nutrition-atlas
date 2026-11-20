@@ -334,6 +334,69 @@
           "url": "https://ybj.fujian.gov.cn/zfxxgkzl/fdzdgknr/qtyzdgkzfxx/202503/P020250317544715507567.pdf"
         }
       ]
+    },
+    {
+      "id": "fj-cervical-plan-2023",
+      "title": "福建省加速消除宫颈癌行动计划实施方案（2023—2030年）",
+      "number": "闽卫妇幼〔2023〕49号",
+      "issuer": "福建省卫生健康委员会等八部门",
+      "date": "2023-06-20",
+      "region": "福建",
+      "type": "省级实施方案",
+      "status": "规划期 2023—2030 年",
+      "summary": "要求规范宫颈癌诊疗和临床路径，把营养、护理和康复纳入配套支持，并加强筛查后连续服务与远程会诊。",
+      "url": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/t20230630_6196181.htm",
+      "fullTextUrl": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/t20230630_6196181.htm",
+      "previewUrl": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/P020230630588230773296.pdf",
+      "notes": "第四部分的营养要求面向宫颈癌诊疗。第三、五部分同时涉及筛查后转介及妇幼服务信息化。",
+      "attachments": [
+        {
+          "title": "省卫健委印发文件 PDF",
+          "url": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/P020230630588230773296.pdf"
+        }
+      ],
+      "clauses": [
+        {
+          "id": "treatment-support",
+          "locator": "四（一）规范宫颈癌诊疗服务",
+          "title": "把护理和营养纳入宫颈癌临床路径",
+          "summary": "推广规范诊疗指南和临床路径，完善康复指导、疼痛管理、护理和营养、心理支持。",
+          "stages": [
+            "treat",
+            "transition"
+          ],
+          "find": "规范宫颈癌诊疗服务",
+          "page": 6,
+          "url": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/P020230630588230773296.pdf"
+        },
+        {
+          "id": "referral",
+          "locator": "三（一）健全宫颈癌筛查长效工作机制",
+          "title": "加强筛查之后的转介与连续管理",
+          "summary": "筛查发现的患者及时转介，鼓励县域医共体衔接初筛、复筛、诊断、治疗和随访。",
+          "stages": [
+            "screen",
+            "transition",
+            "system"
+          ],
+          "find": "加强筛查后续诊疗的连续性",
+          "page": 5,
+          "url": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/P020230630588230773296.pdf"
+        },
+        {
+          "id": "telehealth",
+          "locator": "五（三）促进新技术参与宫颈癌防治",
+          "title": "省妇幼牵头开展远程会诊和线上健康管理",
+          "summary": "由省妇幼保健院牵头使用云上妇幼等平台开展远程会诊、线上健康管理和技能培训，支持基层服务。",
+          "stages": [
+            "transition",
+            "system"
+          ],
+          "find": "云上妇幼",
+          "page": 9,
+          "url": "https://wjw.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/wszh/fybj/202306/P020230630588230773296.pdf"
+        }
+      ]
     }
   ]
 }

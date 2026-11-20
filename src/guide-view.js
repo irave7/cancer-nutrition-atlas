@@ -62,11 +62,15 @@ function fujianHospitals(hospitals) {
       '" aria-controls="fujian-hospital-panel" aria-pressed="'+press(entry===active)+'"','')).join('')+'</div></div>'+
     '<article class="pane hospital-plan" id="fujian-hospital-panel" aria-labelledby="fujian-hospital-title">'+
     '<div class="hospital-heading"><h3 id="fujian-hospital-title">'+safe(active.name)+'</h3>'+badge(active.scenario,'blue')+'</div>'+
-    '<div class="hospital-basis"><div><h4>院方公开基础</h4><p>'+safe(active.basis)+'</p></div>'+
-    '<div><h4>医助怎么接入</h4><p>'+safe(active.entry)+'</p></div></div>'+
-    '<ol class="hospital-steps">'+active.steps.map(step=>'<li><h4>'+safe(step.label)+'</h4>'+
+    '<section class="hospital-evidence" aria-label="已公开的措施与案例"><h4>已公开的措施与案例</h4><ul class="hospital-sources">'+
+      active.evidence.map(entry=>'<li><p class="hospital-source-meta">'+safe(entry.date)+' · '+safe(entry.kind)+'</p><h5>'+safe(entry.title)+'</h5><p>'+
+        safe(entry.detail)+'</p>'+guideReferences(entry.refs)+'</li>').join('')+'</ul></section>'+
+    '<section class="hospital-proposal" aria-label="拟议的医助流程"><h4>拟议的医助接入与院内流程</h4><p>'+safe(active.entry)+'</p>'+
+    '<ol class="hospital-steps">'+active.steps.map(step=>'<li><h5>'+safe(step.label)+'</h5>'+
       '<dl><dt>医助协助</dt><dd>'+safe(step.aid)+'</dd><dt>院方负责</dt><dd>'+safe(step.clinical)+'</dd></dl></li>').join('')+'</ol>'+
-    '<p class="hospital-check">'+safe(active.check)+'</p>'+guideReferences(active.refs)+'</article></section>';
+    '<p class="hospital-confirm"><strong>需与院方确认</strong> '+safe(active.confirm)+'</p>'+
+    '<p class="hospital-check"><strong>首个验收点</strong> '+safe(active.check)+'</p></section>'+
+    '<div class="hospital-references"><h4>对应条款与参考案例</h4>'+guideReferences(active.refs)+'</div></article></section>';
 }
 function fujianPage() {
   const content=guide.fujian;
