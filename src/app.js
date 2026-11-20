@@ -28,7 +28,7 @@ const categories = {
 };
 const evidenceTypes = {program:'服务或项目公开材料',study:'原始研究',case:'病例报道',training:'培训或建设线索'};
 const nav = {
-  guide:['阅读导览','guide'],
+  guide:['首页总览','guide'],
   fujian:['福建应用','pin'],
   benchmarks:['三院案例对照','compare'],
   china:['中国大陆案例','map'],

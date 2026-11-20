@@ -17,27 +17,30 @@ function shareButton(view) {
 function guideThesis(title,text,buttons='') {
   return '<section class="pane guide-thesis"><div><h2>'+safe(title)+'</h2><p>'+safe(text)+'</p></div>'+(buttons?'<div class="actions">'+buttons+'</div>':'')+'</section>';
 }
-function flagshipSection() {
-  return '<section id="guide-flagships" class="guide-block" aria-label="中国大陆标志性案例"><div class="guide-section-head"><div><h2>中国大陆标志性案例</h2><p>'+safe(guide.flagshipIntro)+'</p></div>'+
-    action('show-flagships',symbol('star')+'在地图查看','', 'button primary')+'</div><div class="guide-cards featured-cards">'+
-    guide.flagships.map(entry=>{
-      const record=cases.get(entry.id);
-      return '<article class="pane guide-card">'+badge('★ '+entry.lens,'amber')+'<h3>'+safe(record.institution)+'</h3><p>'+safe(entry.why)+'</p>'+
-       '<p class="meta">'+safe(entry.bounds)+'</p>'+guideReferences([{type:'case',id:entry.id,label:'查看案例与证据'}])+'</article>';
-    }).join('')+'</div></section>';
+function homeRow(ref,title,summary,meta) {
+  const target = 'data-id="'+attr(ref.id)+'"'+(ref.clause?' data-clause="'+attr(ref.clause)+'"':'');
+  const content = '<span class="home-row-text"><strong>'+safe(title)+'</strong><span>'+safe(summary)+'</span>'+
+    '<small>'+safe(meta)+'</small></span>'+symbol('right');
+  return '<li>'+action(ref.type,content,target,'home-row')+'</li>';
 }
 function guidePage() {
   const content=guide.overview;
-  return head(content.title,content.subtitle,[[byScope.china.length,'大陆案例'],[data.policies.length,'中国政策文件'],[flagships.size,'标志性案例']])+
-    guideThesis('我对全周期营养管理的理解',content.thesis,
-      action('guide-section','全周期路径','data-section="cycle"','button primary')+
-      action('guide-section','全国标志性案例','data-section="flagships"')+
-      action('view','福建试点建议','data-view="fujian"')+shareButton('guide'))+
-    '<section class="guide-block" aria-label="阅读索引"><div class="guide-section-head"><h2>阅读索引</h2></div><div class="guide-cards">'+content.routes.map(entry=>
-      '<article class="pane guide-card"><h3>'+safe(entry.title)+'</h3><p>'+safe(entry.detail)+'</p>'+guideReferences([entry.target])+'</article>').join('')+'</div></section>'+
-    '<section id="guide-cycle" class="guide-block" aria-label="全周期照护路径"><div class="guide-section-head"><h2>全周期照护路径</h2></div><ol class="pane guide-cycle">'+
-    content.cycle.map(entry=>'<li><h3>'+safe(entry.label)+'</h3><p>'+safe(entry.summary)+'</p>'+guideReferences(entry.refs)+'</li>').join('')+'</ol></section>'+
-    flagshipSection()+'<p class="guide-footnote">'+safe(content.use)+'</p>';
+  const policyRows = content.policies.map(ref=>homeRow(ref,ref.label,ref.summary,ref.meta)).join('');
+  const caseRows = guide.flagships.map(entry=>homeRow({type:'case',id:entry.id},entry.home.name,entry.home.summary,words([entry.lens,entry.home.evidence]))).join('');
+  return '<div class="home-head">'+head(content.title,content.subtitle)+
+    '<nav class="actions home-shortcuts" aria-label="常用入口">'+
+    action('guide-section','标杆案例','data-section="flagships"','button home-case-jump')+
+    action('view',symbol('pin')+'福建应用','data-view="fujian"')+
+    action('view',symbol('compare')+'三院案例对照','data-view="benchmarks"')+shareButton('guide')+'</nav></div>'+
+    '<div class="home-overview"><section class="pane home-panel home-policies" aria-labelledby="home-policies-title">'+
+    '<header><h2 id="home-policies-title">主要政策</h2>'+action('view','全部政策','data-view="policy"')+'</header>'+
+    '<ul>'+policyRows+'</ul></section>'+
+    '<section class="pane home-panel home-cases" id="guide-flagships" aria-labelledby="home-cases-title">'+
+    '<header><h2 id="home-cases-title">国内标杆案例</h2>'+action('show-flagships','在地图查看')+'</header>'+
+    '<ul>'+caseRows+'</ul></section></div>'+
+    '<details id="guide-cycle" class="pane home-cycle"><summary>全周期照护路径</summary><p>'+safe(content.thesis)+'</p><ol class="guide-cycle">'+
+    content.cycle.map(entry=>'<li><h3>'+safe(entry.label)+'</h3><p>'+safe(entry.summary)+'</p>'+guideReferences(entry.refs)+'</li>').join('')+'</ol>'+
+    '<p class="guide-footnote">'+safe(content.use)+'</p></details>';
 }
 function fujianActions(content) {
   return '<div class="guide-cards action-cards">'+content.actions.map(entry=>'<article class="pane guide-card">'+badge(entry.layer,'blue')+
